@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Focus ST Build | SlaterBilt</title>
+  <meta
+    name="description"
+    content="Follow the SlaterBilt 2013 Focus ST Build With Real-World Mods, Ownership Notes, and Honest Performance Content."
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #0a0a0a;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(34, 211, 238, 0.08), transparent 30%),
+        linear-gradient(180deg, #080808 0%, #0a0a0a 100%);
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(10, 10, 10, 0.82);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+    }
+
+    .brand-sub {
+      margin-top: 4px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .nav a:hover {
+      color: #7ee7f7;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 72px 0 40px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(6, 8, 11, 0.35) 0%, rgba(6, 8, 11, 0.7) 100%),
+        radial-gradient(circle at top left, rgba(34, 211, 238, 0.18), transparent 30%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      text-align: center;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 211, 238, 0.28);
+      background: rgba(34, 211, 238, 0.08);
+      color: #c9f8ff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0 0;
+      font-size: clamp(3rem, 8vw, 5.4rem);
+      line-height: 0.95;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      max-width: 900px;
+    }
+
+    h1 span {
+      display: block;
+      color: #7ee7f7;
+    }
+
+    .hero-copy {
+      margin: 0;
+      max-width: 800px;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+      font-weight: 800;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: #67e8f9;
+      color: #071014;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+    }
+
+    .hero-image-card {
+      width: 100%;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-image {
+      width: 100%;
+      min-height: 360px;
+      max-height: 680px;
+      object-fit: cover;
+      background:
+        radial-gradient(circle at top, rgba(34, 211, 238, 0.25), rgba(10, 10, 10, 0.2) 35%, rgba(10, 10, 10, 0.95) 75%);
+    }
+
+    .stats-grid,
+    .spec-grid,
+    .mods-grid,
+    .content-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      width: 100%;
+    }
+
+    .section {
+      padding: 48px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      margin: 0 0 10px;
+      color: #7ee7f7;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+    }
+
+    h2,
+    h3 {
+      margin: 0;
+      font-weight: 900;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 3.15rem);
+    }
+
+    .muted {
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.8;
+    }
+
+    .section-copy {
+      max-width: 520px;
+      text-align: right;
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .card {
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      border-radius: 26px;
+      padding: 24px;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #7ee7f7;
+    }
+
+    .stat-label {
+      margin-top: 10px;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.48);
+    }
+
+    .spec-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .spec-label {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .spec-value {
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+
+    .mods-grid,
+    .content-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mod-list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .mod-list li {
+      display: flex;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.76);
+      line-height: 1.6;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      margin-top: 7px;
+      border-radius: 999px;
+      background: #7ee7f7;
+      flex: 0 0 auto;
+    }
+
+    .content-card-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+    }
+
+    .cta-panel {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(99, 102, 241, 0.1), rgba(255, 255, 255, 0.04), rgba(34, 211, 238, 0.1));
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .link-card {
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      padding: 18px;
+    }
+
+    .link-label {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+
+    .link-name {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      font-weight: 900;
+    }
+
+    @media (max-width: 980px) {
+      .stats-grid,
+      .spec-grid,
+      .mods-grid,
+      .content-grid,
+      .cta-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .section-copy {
+        text-align: left;
+      }
+
+      .nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 48px;
+      }
+
+      .hero-copy {
+        font-size: 1rem;
+        line-height: 1.75;
+      }
+
+      .stats-grid,
+      .link-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        min-height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div>
+          <a href="index.html" class="brand">SLATERBILT</a>
+          <div class="brand-sub">Focus ST Build Page</div>
+        </div>
+
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="#overview">Overview</a>
+          <a href="#mods">Mods</a>
+          <a href="#content">Content Angles</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="eyebrow">2013 Focus ST • SlaterBilt Build</div>
+
+        <div>
+          <h1>
+            The Focus Build That
+            <span>Actually Gets Used.</span>
+          </h1>
+        </div>
+
+        <p class="hero-copy">
+          This is the SlaterBilt 2013 Focus ST build page: current setup, real-world parts,
+          ownership notes, and the content that comes from actually driving, modifying, and
+          living with the platform instead of just reposting the same opinions.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#mods">View Current Mods</a>
+          <a class="btn btn-secondary" href="#contact">Partner On The Build</a>
+        </div>
+
+        <div class="stats-grid">
+          <div class="card">
+            <div class="stat-value">2013</div>
+            <div class="stat-label">Model Year</div>
+          </div>
+          <div class="card">
+            <div class="stat-value">ST</div>
+            <div class="stat-label">Platform</div>
+          </div>
+          <div class="card">
+            <div class="stat-value">93</div>
+            <div class="stat-label">Tune Fuel</div>
+          </div>
+          <div class="card">
+            <div class="stat-value">Daily/Content & Shows</div>
+            <div class="stat-label">Real Use</div>
+          </div>
+        </div>
+
+        <div class="hero-image-card">
+          <div class="hero-image"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Build Overview</p>
+            <h2>What This Car is About.</h2>
+          </div>
+          <p class="section-copy">
+            A real enthusiast street build focused on drivability, sound, fitment, response,
+            and content value instead of random parts stacking.
+          </p>
+        </div>
+
+        <div class="spec-grid">
+          <div class="card">
+            <div class="spec-label">Car</div>
+            <div class="spec-value">2013 Ford Focus ST</div>
+          </div>
+          <div class="card">
+            <div class="spec-label">Use Case</div>
+            <div class="spec-value">Street Build / Daily-Driven Content Car</div>
+          </div>
+          <div class="card">
+            <div class="spec-label">Style</div>
+            <div class="spec-value">Clean Aggressive Fitment with Real Performance Parts</div>
+          </div>
+          <div class="card">
+            <div class="spec-label">Content Focus</div>
+            <div class="spec-value">Ownership Honesty, Installs, Reviews, and Build Progress</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mods" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Current Mods</p>
+            <h2>The Setup Right Now.</h2>
+          </div>
+          <p class="section-copy">
+            This list is built from the current SlaterBilt Focus ST setup and can be updated as the build evolves.
+          </p>
+        </div>
+
+        <div class="mods-grid">
+          <div class="card">
+            <h3>Performance</h3>
+            <ul class="mod-list">
+              <li><span class="dot"></span><span>FS Werks Cool Flo full intake</span></li>
+              <li><span class="dot"></span><span>CVF 3” catless downpipe with J-fouler</span></li>
+              <li><span class="dot"></span><span>CPE Austentite exhaust</span></li>
+              <li><span class="dot"></span><span>Cobb FMIC</span></li>
+              <li><span class="dot"></span><span>Cobb charge pipes</span></li>
+              <li><span class="dot"></span><span>Turbosmart 50/50 BOV to true vacuum</span></li>
+              <li><span class="dot"></span><span>Cobb symposer delete</span></li>
+              <li><span class="dot"></span><span>Stratified 93 tune on Accessport</span></li>
+              <li><span class="dot"></span><span>BC Racing Coil Overs</span></li>
+              <li><span class="dot"></span><span>GodSpeed Camber Arms</span></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Shifter / Drivetrain</h3>
+            <ul class="mod-list">
+              <li><span class="dot"></span><span>Motul trans fluid every 15k</span></li>
+              <li><span class="dot"></span><span>Cobb solid shifter cable bushings</span></li>
+              <li><span class="dot"></span><span>FS Werks shifter cable bracket bushings</span></li>
+              <li><span class="dot"></span><span>Torque Solutions short shift arm</span></li>
+              <li><span class="dot"></span><span>Billetworkz shift knob</span></li>
+              <li><span class="dot"></span><span>Damond Motorsports Transmission Mount</span></li>
+              <li><span class="dot"></span><span>Damond Motorsports Passenger Engine Mount</span></li>
+              <li><span class="dot"></span><span>Damond Motorsports Rear Motor Mount</span></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Wheels / Exterior</h3>
+            <ul class="mod-list">
+              <li><span class="dot"></span><span>Konig Oversteer wheels</span></li>
+              <li><span class="dot"></span><span>Michelin Pilot Sport 4S tires</span></li>
+              <li><span class="dot"></span><span>HSF Rear Wiper Delete</span></li>
+              <li><span class="dot"></span><span>Home Depot wing riser</span></li>
+              <li><span class="dot"></span><span>Velossa Tech BIGMOUTH Intake Snorkel</span></li>
+              <li><span class="dot"></span><span>TB Performance Front Crash Bar</span></li>
+              <li><span class="dot"></span><span>Wrapped in Gloss Turquoise Ocean By Avery Dennison</span></li>
+              <li><span class="dot"></span><span>Vega Motorworks Aero Kit</span></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Maintenance / Supporting</h3>
+            <ul class="mod-list">
+              <li><span class="dot"></span><span>Pennzoil Platinum 5W-30 with Motorcraft filter every 3k Miles</span></li>
+              <li><span class="dot"></span><span>NGK 6510 plugs gapped to .028</span></li>
+              <li><span class="dot"></span><span>Hennessey Performance WeatherTech floor mats</span></li>
+              <li><span class="dot"></span><span>WeatherTech In Channel Window Visors</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Content angles</p>
+            <h2>What This Build Creates Content For.</h2>
+          </div>
+          <p class="section-copy">
+            This page can double as a sponsor-facing summary and a viewer-facing build breakdown.
+          </p>
+        </div>
+
+        <div class="content-grid">
+          <div class="card">
+            <div class="content-card-title">Ownership Honesty</div>
+            <p class="muted">What it is actually like to drive, maintain, and modify a Focus ST in the real world.</p>
+          </div>
+          <div class="card">
+            <div class="content-card-title">Install Content</div>
+            <p class="muted">Real installs, before-and-after results, fitment notes, and parts feedback that is useful to buyers.</p>
+          </div>
+          <div class="card">
+            <div class="content-card-title">Reviews and Comparisons</div>
+            <p class="muted">Parts reviews, platform quirks, mod priorities, and realistic opinions that trigger comments.</p>
+          </div>
+          <div class="card">
+            <div class="content-card-title">Brand Integration</div>
+            <p class="muted">A clean place for sponsors to see the car, the mod list, and the type of content the build supports.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="card cta-panel">
+          <div>
+            <p class="section-kicker">Partner with SlaterBilt</p>
+            <h2>Want your Product on the Focus Build?</h2>
+            <p class="muted">
+              This build is positioned for install content, ownership reviews, long-form YouTube,
+              short-form social clips, and product visibility that feels native instead of forced.
+            </p>
+            <div class="hero-actions" style="justify-content:flex-start; margin-top:24px;">
+              <a class="btn btn-primary" href="mailto:partnerships@slaterbilt.com">Email SlaterBilt</a>
+              <a class="btn btn-secondary" href="index.html">Back To Home</a>
+            </div>
+          </div>
+
+          <div class="link-grid">
+            <a href="#" class="link-card">
+              <div class="link-label">Platform</div>
+              <div class="link-name">YouTube</div>
+            </a>
+            <a href="#" class="link-card">
+              <div class="link-label">Platform</div>
+              <div class="link-name">TikTok</div>
+            </a>
+            <a href="#" class="link-card">
+              <div class="link-label">Platform</div>
+              <div class="link-name">Instagram</div>
+            </a>
+            <a href="mailto:partnerships@slaterbilt.com" class="link-card">
+              <div class="link-label">Monthly Focus Views</div>
+              <div class="link-name">400-500k</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
