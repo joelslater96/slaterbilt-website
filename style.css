@@ -372,7 +372,6 @@ img {
   border-radius: 30px;
   padding: 28px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
-  min-height: 100%;
 }
 
 .build-card h3 {
@@ -388,9 +387,9 @@ img {
   background:
     radial-gradient(circle at top, rgba(34, 211, 238, 0.35), rgba(10, 10, 10, 0.1) 35%, rgba(10, 10, 10, 0.95) 72%);
 }
-
 .point-list {
-  margin-top: 24px;
+  margin-top: 18px;
+  margin-bottom: 18px;
   display: grid;
   gap: 12px;
 }
