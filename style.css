@@ -616,3 +616,16 @@ img {
     min-height: 300px;
   }
 }
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-box img {
+  max-width: 140px;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
