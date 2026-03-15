@@ -644,3 +644,29 @@ img {
   height: 100%;
   object-fit: cover;
 }
+/* HERO IMAGE COLUMN */
+.hero-image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HERO IMAGE CARD */
+.hero-image-card {
+  width: 100%;
+  max-width: 520px;
+  height: 360px;
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* IMAGE FIT */
+.hero-car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
