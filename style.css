@@ -662,3 +662,6 @@ img {
     aspect-ratio: 16 / 10;
   }
 }
+.focus-image {
+  background-image: url("images/FocusSTBlue.jpg");
+}
