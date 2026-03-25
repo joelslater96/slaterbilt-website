@@ -672,3 +672,14 @@ img {
   background-position: center;
   border-radius: 12px;
 }
+.hero-image-card {
+  overflow: hidden;
+}
+
+.hero-image {
+  transition: transform 0.4s ease;
+}
+
+.hero-image-card:hover .hero-image {
+  transform: scale(1.03);
+}
