@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avery Dennison | SlaterBilt</title>
+  <meta
+    name="description"
+    content="Avery Dennison sponsor page for SlaterBilt featuring the Focus ST build, related content, and associated products."
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #0a0a0a;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(34, 211, 238, 0.08), transparent 30%),
+        linear-gradient(180deg, #080808 0%, #0a0a0a 100%);
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(10, 10, 10, 0.82);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+    }
+
+    .brand-sub {
+      margin-top: 4px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: #7ee7f7;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 80px 0 48px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(6, 8, 11, 0.32) 0%, rgba(6, 8, 11, 0.8) 100%),
+        radial-gradient(circle at top left, rgba(34, 211, 238, 0.16), transparent 30%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 211, 238, 0.28);
+      background: rgba(34, 211, 238, 0.08);
+      color: #c9f8ff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 900;
+    }
+
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(3rem, 7vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    h1 span,
+    .section-kicker,
+    .accent {
+      color: #7ee7f7;
+    }
+
+    .hero-copy,
+    .muted {
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.8;
+    }
+
+    .hero-copy {
+      margin: 20px 0 0;
+      max-width: 640px;
+      font-size: 1.04rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+      font-weight: 800;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: #67e8f9;
+      color: #071014;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+    }
+
+    .hero-image-card,
+    .card {
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      border-radius: 26px;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+    }
+
+    .section {
+      padding: 52px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      margin: 0 0 10px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 3.1rem);
+    }
+
+    .section-copy {
+      max-width: 540px;
+      text-align: right;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.8;
+    }
+
+    .grid-2,
+    .grid-3,
+    .stats-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .metric {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #7ee7f7;
+    }
+
+    .metric-label,
+    .small-label {
+      margin-top: 10px;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.48);
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+    }
+
+    .list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .list li {
+      display: flex;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.65;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      margin-top: 8px;
+      border-radius: 999px;
+      background: #7ee7f7;
+      flex: 0 0 auto;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .video-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: #050505;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-info {
+      padding: 22px;
+    }
+
+    .product-card {
+      height: 100%;
+    }
+
+    .product-name {
+      font-size: 1.05rem;
+      font-weight: 900;
+    }
+
+    .product-meta {
+      margin-top: 8px;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .quote-panel {
+      background:
+        linear-gradient(90deg, rgba(99, 102, 241, 0.1), rgba(255, 255, 255, 0.04), rgba(34, 211, 238, 0.1));
+    }
+
+    .footer-note {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      padding: 8px 0 56px;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner,
+      .grid-2,
+      .grid-3,
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .section-copy {
+        text-align: left;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero-image {
+        min-height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div>
+          <a href="index.html" class="brand">SLATERBILT</a>
+          <div class="brand-sub">Sponsor Detail Page</div>
+        </div>
+
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="focus.html">Focus Build</a>
+          <a href="sponsors.html" class="active">Sponsors</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div class="eyebrow">Official Build Partner</div>
+          <h1>
+            Avery Dennison
+            <span>On The Focus ST.</span>
+          </h1>
+          <p class="hero-copy">
+            Avery Dennison plays a major role in the visual identity of the SlaterBilt Focus ST build.
+            This page is where the brand connection, featured products, associated content, and future
+            video placements can all live in one clean spot.
+          </p>
+
+          <div class="pill-row">
+            <div class="pill">Wrap Partner</div>
+            <div class="pill">Focus ST</div>
+            <div class="pill">Visual Identity</div>
+          </div>
+
+          <div class="button-row">
+            <a href="#content" class="btn btn-primary">View Content</a>
+            <a href="#products" class="btn btn-secondary">View Products</a>
+            <a href="sponsors.html" class="btn btn-secondary">Back To Sponsors</a>
+          </div>
+        </div>
+
+        <div class="hero-image-card">
+          <img src="images/FocusSTBlue.jpg" alt="SlaterBilt Focus ST wrapped with Avery Dennison material" class="hero-image" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="card">
+            <div class="metric">1</div>
+            <div class="metric-label">Main Featured Build</div>
+          </div>
+          <div class="card">
+            <div class="metric">Wrap</div>
+            <div class="metric-label">Primary Product Category</div>
+          </div>
+          <div class="card">
+            <div class="metric">Ongoing</div>
+            <div class="metric-label">Content Integration</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Brand role</p>
+            <h2>Where this sponsor shows up.</h2>
+          </div>
+          <p class="section-copy">
+            This section makes it obvious the brand is tied to an actual build and not just dropped onto a page for decoration.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-title">Build Identity</div>
+            <p class="muted">
+              The wrap is one of the biggest visual changes on the car and plays a direct role in how the Focus ST is recognized across your content.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Video Content</div>
+            <p class="muted">
+              Avery can be tied into transformation videos, reveal clips, walkarounds, reels, and update posts wherever the car’s appearance is front and center.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Photo Assets</div>
+            <p class="muted">
+              Professional photos, thumbnails, and site visuals all benefit from the finished look, making the sponsorship visible beyond one post.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Featured content</p>
+            <h2>Videos and media tied to the brand.</h2>
+          </div>
+          <p class="section-copy">
+            Replace these embeds later with the exact videos you want brands or viewers to see first.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card video-card">
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                title="Avery Dennison Feature Video 1"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-info">
+              <div class="card-title">Focus ST Wrap / Transformation Video</div>
+              <p class="muted">
+                Use this slot for your main reveal, transformation, or wrap-focused long-form video.
+              </p>
+            </div>
+          </div>
+
+          <div class="card video-card">
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                title="Avery Dennison Feature Video 2"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-info">
+              <div class="card-title">Short-Form Recap / Walkaround</div>
+              <p class="muted">
+                Good spot for a follow-up video, short-form compilation, or a second piece of hero content.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Associated products</p>
+            <h2>What is featured on this build.</h2>
+          </div>
+          <p class="section-copy">
+            This section is built so you can later add direct product links, affiliate links, or multiple materials if needed.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card product-card">
+            <div class="product-name">Gloss Turquoise Ocean</div>
+            <div class="product-meta">Featured Material</div>
+            <p class="muted">
+              Main wrap color used to define the current visual direction of the SlaterBilt Focus ST build.
+            </p>
+          </div>
+
+          <div class="card product-card">
+            <div class="product-name">Future Product Slot</div>
+            <div class="product-meta">Add Later</div>
+            <p class="muted">
+              Use this for another film, related product, finish option, or a second featured item tied to the build.
+            </p>
+          </div>
+
+          <div class="card product-card">
+            <div class="product-name">Future Product Slot</div>
+            <div class="product-meta">Add Later</div>
+            <p class="muted">
+              Keep this ready for more materials, recommended products, or a linked product collection down the road.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card quote-panel">
+          <div class="section-head" style="margin-bottom: 20px; align-items: flex-start;">
+            <div>
+              <p class="section-kicker">Why this page exists</p>
+              <h2>A clean place to show real integration.</h2>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div>
+              <p class="muted">
+                This page is meant to show that the sponsor is part of an actual project, actual content, and actual build momentum.
+                It keeps everything in one place without turning into a hard sales pitch.
+              </p>
+            </div>
+            <div>
+              <ul class="list">
+                <li><span class="dot"></span><span>Dedicated home for sponsor-related media</span></li>
+                <li><span class="dot"></span><span>Easy way to organize product and video placements</span></li>
+                <li><span class="dot"></span><span>Clean page to link from bios, emails, or sponsor outreach</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container footer-note">
+      Built to showcase the brand as part of the project, not just drop a logo on a page.
+    </div>
+  </div>
+</body>
+</html>
