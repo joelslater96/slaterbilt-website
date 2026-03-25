@@ -328,6 +328,13 @@
       color: rgba(255, 255, 255, 0.75);
     }
 
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 18px;
+      align-items: start;
+    }
+
     .video-card {
       padding: 0;
       overflow: hidden;
@@ -340,6 +347,10 @@
       background: #050505;
     }
 
+    .video-wrap.short {
+      padding-top: 177.77%;
+    }
+
     .video-wrap iframe {
       position: absolute;
       inset: 0;
@@ -350,6 +361,20 @@
 
     .video-info {
       padding: 22px;
+    }
+
+    .short-feed {
+      display: grid;
+      gap: 18px;
+    }
+
+    .short-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .short-card .video-info {
+      padding: 18px 20px 20px;
     }
 
     .product-card {
@@ -381,11 +406,22 @@
       font-size: 0.92rem;
     }
 
+    @media (max-width: 1100px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .short-feed {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 980px) {
       .hero-inner,
       .grid-2,
       .grid-3,
-      .stats-grid {
+      .stats-grid,
+      .short-feed {
         grid-template-columns: 1fr;
       }
 
@@ -526,11 +562,11 @@
             <h2>Videos and media tied to the brand.</h2>
           </div>
           <p class="section-copy">
-            Replace these embeds later with the exact videos you want brands or viewers to see first.
+            One main feature video on the left, with a vertical short-form feed on the right.
           </p>
         </div>
 
-        <div class="grid-2">
+        <div class="video-grid">
           <div class="card video-card">
             <div class="video-wrap">
               <iframe
@@ -547,19 +583,37 @@
             </div>
           </div>
 
-          <div class="card video-card">
-            <div class="video-wrap">
-              <iframe
-                src="https://youtube.com/shorts/vlZe5yHIkPY?si=nvkutFpneu8NpeJ2"
-                title="Avery Dennison Feature Video 2"
-                allowfullscreen>
-              </iframe>
+          <div class="short-feed">
+            <div class="card short-card">
+              <div class="video-wrap short">
+                <iframe
+                  src="https://www.youtube.com/embed/vlZe5yHIkPY"
+                  title="Avery Dennison Short 1"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="video-info">
+                <div class="card-title">Short-Form Walkaround</div>
+                <p class="muted">
+                  Quick vertical feature showing the car, wrap color, and overall visual presence in motion.
+                </p>
+              </div>
             </div>
-            <div class="video-info">
-              <div class="card-title">Short-Form Recap / Walkaround</div>
-              <p class="muted">
-                Good spot for a follow-up video, short-form compilation, or a second piece of hero content.
-              </p>
+
+            <div class="card short-card">
+              <div class="video-wrap short">
+                <iframe
+                  src="https://www.youtube.com/embed/YOUR_SECOND_SHORT_ID_HERE"
+                  title="Avery Dennison Short 2"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="video-info">
+                <div class="card-title">Future Short Slot</div>
+                <p class="muted">
+                  Add another YouTube Short, Reel repost, or quick visual recap here later.
+                </p>
+              </div>
             </div>
           </div>
         </div>
