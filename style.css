@@ -683,3 +683,6 @@ img {
 .hero-image-card:hover .hero-image {
   transform: scale(1.03);
 }
+.video-wrap.short {
+  padding-top: 177.77%; /* 9:16 ratio */
+}
