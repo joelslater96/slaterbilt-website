@@ -678,17 +678,19 @@ img {
   .logo-box {
     aspect-ratio: 16 / 10;
   }
-}
-.build-image img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-}
 .build-image {
   width: 100%;
   height: 220px;
   border-radius: 14px;
   overflow: hidden;
-  position: relative;
+  background-color: #111;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.raptor-image {
+  background-image: url("images/Raptor.PNG");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
