@@ -409,14 +409,23 @@ img {
   height: 220px;
   margin-bottom: 22px;
   border-radius: 24px;
+  overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background-size: cover;
-  background-position: center;
+  background-color: #111111;
   background-repeat: no-repeat;
 }
 
 .focus-image {
   background-image: url("images/FocusSTBlue.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.raptor-image {
+  background-image: url("images/Raptor.PNG");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .point-list {
@@ -678,19 +687,8 @@ img {
   .logo-box {
     aspect-ratio: 16 / 10;
   }
-.build-image {
-  width: 100%;
-  height: 220px;
-  border-radius: 14px;
-  overflow: hidden;
-  background-color: #111;
-  margin-bottom: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
 
-.raptor-image {
-  background-image: url("images/Raptor.PNG");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  .build-image {
+    height: 200px;
+  }
 }
