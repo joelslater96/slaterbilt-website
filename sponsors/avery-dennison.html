@@ -3,447 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Avery Dennison | SlaterBilt</title>
+
+  <title>Big 7 Kits | SlaterBilt</title>
   <meta
     name="description"
-    content="Avery Dennison sponsor page for SlaterBilt featuring the Focus ST build, related content, and associated products."
+    content="Big 7 Kits sponsor page for SlaterBilt featuring battery cable upgrades, electrical system support, install content, and associated builds."
   />
+
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: #0a0a0a;
-      color: #ffffff;
-      font-family: Arial, Helvetica, sans-serif;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .page-shell {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top, rgba(34, 211, 238, 0.08), transparent 30%),
-        linear-gradient(180deg, #080808 0%, #0a0a0a 100%);
-    }
-
-    .container {
-      width: min(1200px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(12px);
-      background: rgba(10, 10, 10, 0.82);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 0;
-      gap: 20px;
-    }
-
-    .brand {
-      font-size: 1.45rem;
-      font-weight: 900;
-      letter-spacing: 0.22em;
-    }
-
-    .brand-sub {
-      margin-top: 4px;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    .nav {
-      display: flex;
-      gap: 24px;
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    .nav a:hover,
-    .nav a.active {
-      color: #7ee7f7;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 80px 0 48px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(6, 8, 11, 0.32) 0%, rgba(6, 8, 11, 0.8) 100%),
-        radial-gradient(circle at top left, rgba(34, 211, 238, 0.16), transparent 30%);
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(34, 211, 238, 0.28);
-      background: rgba(34, 211, 238, 0.08);
-      color: #c9f8ff;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-
-    h1,
-    h2,
-    h3 {
-      margin: 0;
-      font-weight: 900;
-    }
-
-    h1 {
-      margin-top: 18px;
-      font-size: clamp(3rem, 7vw, 5rem);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-    }
-
-    h1 span,
-    .section-kicker,
-    .accent {
-      color: #7ee7f7;
-    }
-
-    .hero-copy,
-    .muted {
-      color: rgba(255, 255, 255, 0.72);
-      line-height: 1.8;
-    }
-
-    .hero-copy {
-      margin: 20px 0 0;
-      max-width: 640px;
-      font-size: 1.04rem;
-    }
-
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 22px;
-      border-radius: 18px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.78rem;
-      font-weight: 800;
-      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      background: #67e8f9;
-      color: #071014;
-    }
-
-    .btn-secondary {
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      background: rgba(255, 255, 255, 0.05);
-      color: #fff;
-    }
-
-    .hero-image-card,
-    .card {
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-      border-radius: 26px;
-      overflow: hidden;
-    }
-
-    .hero-image {
-      width: 100%;
-      height: 100%;
-      min-height: 420px;
-      object-fit: cover;
-    }
-
-    .section {
-      padding: 52px 0;
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 24px;
-      margin-bottom: 28px;
-    }
-
-    .section-kicker {
-      margin: 0 0 10px;
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 5vw, 3.1rem);
-    }
-
-    .section-copy {
-      max-width: 540px;
-      text-align: right;
-      color: rgba(255, 255, 255, 0.68);
-      line-height: 1.8;
-    }
-
-    .grid-2,
-    .grid-3,
-    .stats-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .stats-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .card {
-      padding: 24px;
-    }
-
-    .metric {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #7ee7f7;
-    }
-
-    .metric-label,
-    .small-label {
-      margin-top: 10px;
-      font-size: 0.76rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: rgba(255, 255, 255, 0.48);
-    }
-
-    .card-title {
-      font-size: 1.15rem;
-      font-weight: 900;
-    }
-
-    .list {
-      margin: 18px 0 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-
-    .list li {
-      display: flex;
-      gap: 10px;
-      color: rgba(255, 255, 255, 0.78);
-      line-height: 1.65;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      margin-top: 8px;
-      border-radius: 999px;
-      background: #7ee7f7;
-      flex: 0 0 auto;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .pill {
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(255, 255, 255, 0.05);
-      color: rgba(255, 255, 255, 0.75);
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 18px;
-      align-items: start;
-    }
-
-    .video-card {
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .video-wrap {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%;
-      background: #050505;
-    }
-
-    .video-wrap.short {
-      padding-top: 177.77%;
-    }
-
-    .video-wrap iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .video-info {
-      padding: 22px;
-    }
-
-    .short-feed {
-      display: grid;
-      gap: 18px;
-    }
-
-    .short-card {
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .short-card .video-info {
-      padding: 18px 20px 20px;
-    }
-
-    .product-card {
-      height: 100%;
-    }
-
-    .product-name {
-      font-size: 1.05rem;
-      font-weight: 900;
-    }
-
-    .product-meta {
-      margin-top: 8px;
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: rgba(255, 255, 255, 0.45);
-    }
-
-    .quote-panel {
-      background:
-        linear-gradient(90deg, rgba(99, 102, 241, 0.1), rgba(255, 255, 255, 0.04), rgba(34, 211, 238, 0.1));
-    }
-
-    .footer-note {
-      text-align: center;
-      color: rgba(255, 255, 255, 0.5);
-      padding: 8px 0 56px;
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 1100px) {
-      .video-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .short-feed {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 980px) {
-      .hero-inner,
-      .grid-2,
-      .grid-3,
-      .stats-grid,
-      .short-feed {
-        grid-template-columns: 1fr;
-      }
-
-      .section-head {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .section-copy {
-        text-align: left;
-      }
-
-      .nav {
-        display: none;
-      }
-
-      .hero-image {
-        min-height: 280px;
-      }
-    }
+    /* PASTE THE SAME FULL STYLE SECTION FROM YOUR AVERY PAGE HERE */
   </style>
 </head>
+
 <body>
   <div class="page-shell">
     <header class="topbar">
@@ -465,20 +36,23 @@
       <div class="container hero-inner">
         <div>
           <div class="eyebrow">Official Build Partner</div>
+
           <h1>
-            Avery Dennison
-            <span>On The Focus ST.</span>
+            Big 7 Kits
+            <span>Power Behind The Builds.</span>
           </h1>
+
           <p class="hero-copy">
-            Avery Dennison plays a major role in the visual identity of the SlaterBilt Focus ST build.
-            This page is where the brand connection, featured products, associated content, and future
-            video placements can all live in one clean spot.
+            Big 7 Kits has been one of the longest-standing partners behind SlaterBilt, supporting multiple builds
+            with upgraded battery cables and electrical system improvements. This page highlights where the brand
+            fits into the vehicles, the content, and the real-world reliability side of the projects.
           </p>
 
           <div class="pill-row">
-            <div class="pill">Wrap Partner</div>
-            <div class="pill">Focus ST</div>
-            <div class="pill">Visual Identity</div>
+            <div class="pill">Electrical Upgrade</div>
+            <div class="pill">Raptor</div>
+            <div class="pill">ZJ</div>
+            <div class="pill">F-250</div>
           </div>
 
           <div class="button-row">
@@ -490,8 +64,8 @@
 
         <div class="hero-image-card">
           <img
-            src="../images/FocusSTBlue.jpg"
-            alt="SlaterBilt Focus ST wrapped with Avery Dennison material"
+            src="../images/BIG7.png"
+            alt="Big 7 Kits logo featured on SlaterBilt sponsor page"
             class="hero-image"
           />
         </div>
@@ -502,16 +76,18 @@
       <div class="container">
         <div class="stats-grid">
           <div class="card">
-            <div class="metric">1</div>
-            <div class="metric-label">Main Featured Build</div>
+            <div class="metric">3</div>
+            <div class="metric-label">Supported Builds</div>
           </div>
+
           <div class="card">
-            <div class="metric">Wrap</div>
+            <div class="metric">Cable</div>
             <div class="metric-label">Primary Product Category</div>
           </div>
+
           <div class="card">
-            <div class="metric">Ongoing</div>
-            <div class="metric-label">Content Integration</div>
+            <div class="metric">Long-Term</div>
+            <div class="metric-label">Partner Integration</div>
           </div>
         </div>
       </div>
@@ -524,150 +100,130 @@
             <p class="section-kicker">Brand role</p>
             <h2>Where this sponsor shows up.</h2>
           </div>
+
           <p class="section-copy">
-            This section makes it obvious the brand is tied to an actual build and not just dropped onto a page for decoration.
+            Big 7 Kits connects directly to the practical side of the builds: power delivery, charging support,
+            reliability, and the kind of upgrades most people ignore until there is a problem.
           </p>
         </div>
 
         <div class="grid-3">
           <div class="card">
-            <div class="card-title">Build Identity</div>
+            <div class="card-title">Electrical Foundation</div>
             <p class="muted">
-              The wrap is one of the biggest visual changes on the car and plays a direct role in how the Focus ST is recognized across your content.
+              Upgraded battery cables, grounds, and charging system support help create a stronger foundation
+              for vehicles running accessories, lights, audio, winches, and other upgrades.
             </p>
           </div>
 
           <div class="card">
-            <div class="card-title">Video Content</div>
+            <div class="card-title">Real Install Content</div>
             <p class="muted">
-              Avery can be tied into transformation videos, reveal clips, walkarounds, reels, and update posts wherever the car’s appearance is front and center.
+              Big 7 Kits fits naturally into garage install videos, troubleshooting conversations,
+              before-and-after checks, and real-world build updates.
             </p>
           </div>
 
           <div class="card">
-            <div class="card-title">Photo Assets</div>
+            <div class="card-title">Multiple Builds</div>
             <p class="muted">
-              Professional photos, thumbnails, and site visuals all benefit from the finished look, making the sponsorship visible beyond one post.
+              The partnership has touched multiple SlaterBilt projects, including the ZJ, F-250, and Raptor,
+              making it more than a one-time logo placement.
             </p>
           </div>
         </div>
       </div>
     </section>
-<section id="content" class="section">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <p class="section-kicker">Featured content</p>
-        <h2>Videos and media tied to the brand.</h2>
-      </div>
-      <p class="section-copy">
-        Clean, uniform video placement tied directly to the build.
-      </p>
-    </div>
 
-    <div class="video-uniform-grid">
-      <div class="card video-uniform-card">
-        <div class="video-uniform-wrap">
-          <iframe
-            src="https://www.youtube.com/embed/vlZe5yHIkPY"
-            title="Avery Dennison Short"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-info">
-          <div class="card-title">Focus ST Walkaround</div>
-          <p class="muted">
-            Quick visual showing the wrap in real lighting and motion.
+    <section id="content" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Featured content</p>
+            <h2>Videos and media tied to the brand.</h2>
+          </div>
+
+          <p class="section-copy">
+            Use this section for install videos, short-form clips, electrical explainers, and future Big 7 Kits content.
           </p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-  
 
-     <section id="content" class="section">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <p class="section-kicker">Featured content</p>
-        <h2>Videos and media tied to the brand.</h2>
-      </div>
-      <p class="section-copy">
-        Clean, uniform video placement tied directly to the build.
-      </p>
-    </div>
+        <div class="grid-2">
+          <div class="card video-card">
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                title="Big 7 Kits Install Video"
+                allowfullscreen>
+              </iframe>
+            </div>
 
-    <div class="grid-2">
-      <div class="card video-card">
-        <div class="video-wrap">
-          <iframe
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
-            title="Avery Dennison Feature Video"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-info">
-          <div class="card-title">Focus ST Wrap / Transformation Video</div>
-          <p class="muted">
-            Main 16:9 feature video showing the wrap, transformation, or long-form build content.
-          </p>
-        </div>
-      </div>
+            <div class="video-info">
+              <div class="card-title">Big 7 Kits Install / Feature Video</div>
+              <p class="muted">
+                Main 16:9 feature video showing the install, explanation, or electrical upgrade overview.
+              </p>
+            </div>
+          </div>
 
-      <div class="card short-card">
-        <div class="video-wrap short">
-          <iframe
-            src="https://www.youtube.com/embed/vlZe5yHIkPY"
-            title="Avery Dennison Short"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-info">
-          <div class="card-title">Short-Form Walkaround</div>
-          <p class="muted">
-            Quick vertical feature showing the wrap color and the car in motion.
-          </p>
+          <div class="card short-card">
+            <div class="video-wrap short">
+              <iframe
+                src="https://www.youtube.com/embed/YOUR_SHORT_ID_HERE"
+                title="Big 7 Kits Short"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <div class="video-info">
+              <div class="card-title">Short-Form Electrical Upgrade Clip</div>
+              <p class="muted">
+                Quick vertical clip showing the kit, install highlights, or why upgraded battery cables matter.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>   
+    </section>
 
     <section id="products" class="section">
       <div class="container">
         <div class="section-head">
           <div>
             <p class="section-kicker">Associated Products</p>
-            <h2>What is on the Car?</h2>
+            <h2>What supports the builds?</h2>
           </div>
+
           <p class="section-copy">
-          The "Technicalities" Behind the Focus ST Image. 
+            The practical electrical upgrades behind the SlaterBilt vehicles.
           </p>
         </div>
 
         <div class="grid-3">
           <div class="card product-card">
-            <div class="product-name">Gloss Turquoise Ocean</div>
-            <div class="product-meta">Featured Material</div>
+            <div class="product-name">Big 7 Battery Cable Kit</div>
+            <div class="product-meta">Primary Upgrade</div>
             <p class="muted">
-              Main wrap color used to define the current visual direction of the SlaterBilt Focus ST build. While being close to Nitrous Blue that is offered on the RS, it is considerably brighter. I wanted a color that would stand out, but wasn't too loud. Something that would catch your eye as different, but not be offensive. 
+              A battery cable upgrade designed to improve the main electrical paths on the vehicle,
+              including power and ground connections that support the charging system.
             </p>
           </div>
 
           <div class="card product-card">
-            <div class="product-name">SW900 Film</div>
-            <div class="product-meta">Avery Vinyl Line</div>
+            <div class="product-name">Grounding Support</div>
+            <div class="product-meta">Reliability Upgrade</div>
             <p class="muted">
-             Avery Dennison Supreme Wrapping Film™ combines style with performance, custom versatility and easy-to-apply convenience with one of the best vinyl wrap color change portfolios in the industry.  
+              Strong grounds matter, especially on older vehicles or modified builds with added electrical demand.
+              This is the kind of upgrade that helps the rest of the vehicle work the way it should.
             </p>
           </div>
 
           <div class="card product-card">
-            <div class="product-name">Redefining Vinyl</div>
-            <div class="product-meta">Vinyl Shops #1 Choice</div>
+            <div class="product-name">Charging System Support</div>
+            <div class="product-meta">Build Foundation</div>
             <p class="muted">
-              Patented Avery Dennison® Easy Apply™ RS adhesive technology to provide repositionability and slideability, saving valuable installation time. Cover large panels with just one piece of material = fewer seams. Available in 60” roll sizes (Gloss, Matte, Metallic, Pearl, Satin & Carbon Fiber) and 53” roll sizes.
+              Whether the vehicle has extra lighting, accessories, audio, winches, or future upgrades,
+              the electrical foundation matters before stacking more load onto the system.
             </p>
           </div>
         </div>
@@ -680,22 +236,25 @@
           <div class="section-head" style="margin-bottom: 20px; align-items: flex-start;">
             <div>
               <p class="section-kicker">Why This Page Exists</p>
-              <h2>A Final Thank You to Avery Dennison</h2>
+              <h2>A Final Thank You to Big 7 Kits</h2>
             </div>
           </div>
 
           <div class="grid-2">
             <div>
               <p class="muted">
-                Avery was one of the first companies to take on the focus build. With the color being the main focal point of the car, it was crucial for me to find a brand I could work with and stand behind.
-              Avery Dennison was a pivotal partner for the focus build, and the channel as a whole. So for that, I am grateful.
+                Big 7 Kits has been one of the longest-standing partners involved with SlaterBilt.
+                From the ZJ to the F-250 to the Raptor, their support has gone beyond a simple product placement.
+                They have helped support the practical side of the builds — the stuff people do not always see,
+                but the stuff that matters when vehicles are actually being used.
               </p>
             </div>
+
             <div>
               <ul class="list">
-                <li><span class="dot"></span><span>Industry Leader in Wrap Material Quality</span></li>
-                <li><span class="dot"></span><span>Unique Colors and Films</span></li>
-                <li><span class="dot"></span><span>Great People Behind The Scenes</span></li>
+                <li><span class="dot"></span><span>Long-standing SlaterBilt partner</span></li>
+                <li><span class="dot"></span><span>Practical upgrades that support real builds</span></li>
+                <li><span class="dot"></span><span>Electrical reliability for vehicles that actually get used</span></li>
               </ul>
             </div>
           </div>
@@ -704,7 +263,7 @@
     </section>
 
     <div class="container footer-note">
-      Built to showcase the brand as part of the project, not just drop a logo on a page.
+      Built to showcase Big 7 Kits as part of the project, not just drop a logo on a page.
     </div>
   </div>
 </body>
