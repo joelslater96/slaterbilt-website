@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Sponsors | SlaterBilt</title>
   <meta
     name="description"
     content="A showcase of the brands supporting SlaterBilt builds and content."
   />
+
   <style>
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       background: #0a0a0a;
@@ -18,8 +22,16 @@
       font-family: Arial, Helvetica, sans-serif;
       overflow-x: hidden;
     }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
     .page-shell {
       min-height: 100vh;
@@ -113,7 +125,10 @@
       text-transform: uppercase;
     }
 
-    h1, h2, h3 { margin: 0; font-weight: 900; }
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 900;
+    }
 
     h1 {
       margin-top: 18px;
@@ -265,65 +280,15 @@
       text-transform: uppercase;
     }
 
-    .spotlight-grid,
-    .partner-grid,
+    .logo-button:hover {
+      background: rgba(126, 231, 247, 0.16);
+      border-color: rgba(126, 231, 247, 0.42);
+    }
+
     .build-grid {
       display: grid;
-      gap: 18px;
-    }
-
-    .spotlight-grid,
-    .build-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .partner-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .partner-card-title,
-    .build-card-title,
-    .spotlight-title {
-      font-size: 1.15rem;
-      font-weight: 900;
-    }
-
-    .spotlight-link {
-      display: block;
-      height: 100%;
-      border-radius: 26px;
-      transition: transform 0.25s ease;
-    }
-
-    .spotlight-link:hover {
-      transform: translateY(-4px);
-    }
-
-    .spotlight-card {
-      height: 100%;
-      transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .spotlight-link:hover .spotlight-card {
-      border-color: rgba(126, 231, 247, 0.35);
-      background: rgba(255, 255, 255, 0.065);
-      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.32);
-    }
-
-    .spotlight-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 18px;
-      padding: 11px 16px;
-      border-radius: 14px;
-      border: 1px solid rgba(126, 231, 247, 0.22);
-      background: rgba(126, 231, 247, 0.08);
-      color: #c9f8ff;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
+      gap: 18px;
     }
 
     .pill-row {
@@ -352,6 +317,11 @@
       align-items: center;
     }
 
+    .build-card-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+    }
+
     .build-image {
       height: 120px;
       border-radius: 20px;
@@ -378,8 +348,6 @@
     @media (max-width: 980px) {
       .hero-stats,
       .logo-grid,
-      .spotlight-grid,
-      .partner-grid,
       .build-grid {
         grid-template-columns: 1fr;
       }
@@ -393,7 +361,9 @@
         text-align: left;
       }
 
-      .nav { display: none; }
+      .nav {
+        display: none;
+      }
 
       .build-card {
         grid-template-columns: 1fr;
@@ -405,6 +375,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="page-shell">
     <header class="topbar">
@@ -425,26 +396,34 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="eyebrow">The Brands Behind The Builds</div>
+
         <h1>
           The Companies That Help
           <span>Keep SlaterBilt Moving.</span>
         </h1>
+
         <p class="hero-copy">
-          This page is built to showcase the brands behind the cars, the content, and the growth of the platform. These brands each played a monumental role in the development of the vehicles, the content, and myself as a creator as a whole. This serves as a public THANK YOU to all the brands I am fortunate enough to work with.
+          This page is built to showcase the brands behind the cars, the content, and the growth of the platform.
+          These brands each played a monumental role in the development of the vehicles, the content, and myself
+          as a creator as a whole. This serves as a public THANK YOU to all the brands I am fortunate enough to work with.
+        </p>
 
         <div class="hero-stats">
           <div class="card">
             <div class="metric">2</div>
             <div class="metric-label">Active Builds</div>
           </div>
+
           <div class="card">
             <div class="metric">4+</div>
             <div class="metric-label">Featured Sponsors</div>
           </div>
+
           <div class="card">
             <div class="metric">600k+</div>
             <div class="metric-label">Monthly Views</div>
           </div>
+
           <div class="card">
             <div class="metric">3</div>
             <div class="metric-label">Main Platforms</div>
@@ -457,77 +436,111 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Featured sponsors</p>
+            <p class="section-kicker">Featured Sponsors</p>
             <h2>Main partner showcase.</h2>
           </div>
+
           <p class="section-copy">
-            Click on Each Sponsor to learn more about the company and their contributions to SlaterBilt.
+            Click on each sponsor to learn more about the company and their contributions to SlaterBilt.
           </p>
         </div>
 
         <div class="logo-grid">
           <div class="logo-box">
             <div class="logo-image-wrap">
-              <img src="images/AveryLogo.png" alt="Avery Dennison">
+              <img src="images/AveryLogo.png" alt="Avery Dennison logo">
             </div>
+
             <div class="logo-title">Avery Dennison</div>
-            <div class="logo-description">Material partner behind the wrap direction and visual identity of the Focus ST build.</div>
-<a href="sponsors/avery-dennison.html" class="logo-button">
-  View Sponsor Page
-</a>
+
+            <div class="logo-description">
+              Material partner behind the wrap direction and visual identity of the Focus ST build.
+            </div>
+
+            <a href="sponsors/avery-dennison.html" class="logo-button">
+              View Sponsor Page
+            </a>
           </div>
 
           <div class="logo-box">
             <div class="logo-image-wrap">
-              <img src="images/BIG7.png" alt="Big 7 Kits">
+              <img src="images/BIG7.png" alt="Big 7 Kits logo">
             </div>
+
             <div class="logo-title">Big 7 Kits</div>
-            <div class="logo-description"> Sponsoring our ZJ, F-250, and Raptor builds, BIG 7 KITS serves as our longest standing partner. The Best, and personally ONLY option when it comes to upgrading your battery cables and electrical system. .</div>
-            <a href="sponsors/big-7-kits.html">Big 7 Kits</a>
-              View Sponsor Page</a>
+
+            <div class="logo-description">
+              Sponsoring our ZJ, F-250, and Raptor builds, Big 7 Kits serves as our longest-standing partner.
+              The best, and personally only, option when it comes to upgrading battery cables and improving
+              the electrical foundation of a build.
+            </div>
+
+            <a href="sponsors/big-7-kits.html" class="logo-button">
+              View Sponsor Page
+            </a>
           </div>
 
           <div class="logo-box">
             <div class="logo-image-wrap">
-              <img src="images/VelossaTech.png" alt="VelossaTech">
+              <img src="images/VelossaTech.png" alt="VelossaTech logo">
             </div>
+
             <div class="logo-title">VelossaTech</div>
-            <div class="logo-description">Supporting the Focus ST with platform-specific hardware that blends styling and performance presence.</div>
-            <a href="velossatech.html" class="logo-button">View Sponsor Page</a>
+
+            <div class="logo-description">
+              Supporting the Focus ST with platform-specific hardware that blends styling and performance presence.
+            </div>
+
+            <a href="sponsors/velossatech.html" class="logo-button">
+              View Sponsor Page
+            </a>
           </div>
 
           <div class="logo-box">
             <div class="logo-image-wrap">
-              <img src="images/Vega Logo.jpg" alt="Vega Motorworks">
+              <img src="images/Vega Logo.jpg" alt="Vega Motorworks logo">
             </div>
+
             <div class="logo-title">Vega Motorworks</div>
-            <div class="logo-description">Helping shape the aggressive aero direction and exterior identity of the Focus build. Vega is also a repeat sponsor, sponsoring both our 2014 Focus ST (RIP) and our current 2013 Focus ST. </div>
-            <a href="vega-motorworks.html" class="logo-button">View Sponsor Page</a>
+
+            <div class="logo-description">
+              Helping shape the aggressive aero direction and exterior identity of the Focus build. Vega is also
+              a repeat sponsor, supporting both our 2014 Focus ST and our current 2013 Focus ST.
+            </div>
+
+            <a href="sponsors/vega-motorworks.html" class="logo-button">
+              View Sponsor Page
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    
-
     <section class="section">
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="section-kicker">By build</p>
+            <p class="section-kicker">By Build</p>
             <h2>Which sponsors connect to which project.</h2>
           </div>
+
           <p class="section-copy">
-            This makes the page feel organized and gives people context fast.
+            This keeps the page organized and gives people context fast.
           </p>
         </div>
 
         <div class="build-grid">
           <div class="card build-card">
             <div class="build-image focus-build"></div>
+
             <div>
               <div class="build-card-title">2013 Focus ST</div>
-              <p class="muted">Current visual and performance-focused street build supported by brands tied to wrap, aero, intake, and related parts.</p>
+
+              <p class="muted">
+                Current visual and performance-focused street build supported by brands tied to wrap, aero,
+                intake, and related parts.
+              </p>
+
               <div class="pill-row">
                 <div class="pill">Avery Dennison</div>
                 <div class="pill">VelossaTech</div>
@@ -538,9 +551,15 @@
 
           <div class="card build-card">
             <div class="build-image raptor-build"></div>
+
             <div>
               <div class="build-card-title">2014 SVT Raptor</div>
-              <p class="muted">Truck-focused content platform with supporting brands tied to electrical upgrades, feature installs, and future expansion.</p>
+
+              <p class="muted">
+                Truck-focused content platform with supporting brands tied to electrical upgrades, feature installs,
+                and future expansion.
+              </p>
+
               <div class="pill-row">
                 <div class="pill">Big 7 Kits</div>
                 <div class="pill">FourSyncTech</div>
@@ -551,8 +570,6 @@
         </div>
       </div>
     </section>
-
-    
 
     <div class="container footer-note">
       Built to showcase the brands behind SlaterBilt, not bury them in a sales page.
