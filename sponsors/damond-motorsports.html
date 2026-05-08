@@ -386,28 +386,27 @@
       perspective: 1200px;
     }
 
-    .deck-card {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      padding: 24px;
-      border-radius: 26px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-      opacity: 0;
-      transform: scale(0.92) translateX(80px);
-      pointer-events: none;
-      transition: opacity 0.35s ease, transform 0.35s ease;
-    }
+   .deck-card {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  padding: 24px;
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: #111111;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: scale(0.92) translateX(80px);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
 
-    .video-description-box {
-      margin-top: 18px;
-      padding: 22px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.045);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+   .video-description-box {
+  margin-top: 18px;
+  padding: 22px;
+  border-radius: 20px;
+  background: #161616;
     }
 
     #video-1:checked ~ .video-deck .card-1,
@@ -419,21 +418,23 @@
       z-index: 3;
     }
 
-    #video-1:checked ~ .video-deck .card-2,
-    #video-2:checked ~ .video-deck .card-3,
-    #video-3:checked ~ .video-deck .card-1 {
-      opacity: 0.28;
-      transform: scale(0.94) translateX(34px);
-      z-index: 2;
-    }
+   #video-1:checked ~ .video-deck .card-2,
+#video-2:checked ~ .video-deck .card-3,
+#video-3:checked ~ .video-deck .card-1 {
+  opacity: 1;
+  transform: scale(0.94) translateX(34px);
+  z-index: 2;
+  background: #0d0d0d;
+}
 
-    #video-1:checked ~ .video-deck .card-3,
-    #video-2:checked ~ .video-deck .card-1,
-    #video-3:checked ~ .video-deck .card-2 {
-      opacity: 0.16;
-      transform: scale(0.9) translateX(68px);
-      z-index: 1;
-    }
+#video-1:checked ~ .video-deck .card-3,
+#video-2:checked ~ .video-deck .card-1,
+#video-3:checked ~ .video-deck .card-2 {
+  opacity: 1;
+  transform: scale(0.9) translateX(68px);
+  z-index: 1;
+  background: #090909;
+}
 
     .deck-controls {
       display: flex;
