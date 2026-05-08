@@ -345,10 +345,8 @@
       width: 100%;
       padding-top: 56.25%;
       background: #050505;
-    }
-
-    .video-wrap.short {
-      padding-top: 177.77%;
+      border-radius: 18px;
+      overflow: hidden;
     }
 
     .video-wrap iframe {
@@ -359,8 +357,130 @@
       border: 0;
     }
 
-    .video-info {
-      padding: 22px 0 0;
+    .deck-section-head {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .deck-section-head .section-copy {
+      text-align: center;
+      max-width: 720px;
+    }
+
+    .video-deck-shell {
+      position: relative;
+      width: min(900px, 100%);
+      margin: 0 auto;
+    }
+
+    .video-deck-shell input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .video-deck {
+      position: relative;
+      min-height: 690px;
+      perspective: 1200px;
+    }
+
+    .deck-card {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      padding: 24px;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      opacity: 0;
+      transform: scale(0.92) translateX(80px);
+      pointer-events: none;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .video-description-box {
+      margin-top: 18px;
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    #video-1:checked ~ .video-deck .card-1,
+    #video-2:checked ~ .video-deck .card-2,
+    #video-3:checked ~ .video-deck .card-3 {
+      opacity: 1;
+      transform: scale(1) translateX(0);
+      pointer-events: auto;
+      z-index: 3;
+    }
+
+    #video-1:checked ~ .video-deck .card-2,
+    #video-2:checked ~ .video-deck .card-3,
+    #video-3:checked ~ .video-deck .card-1 {
+      opacity: 0.28;
+      transform: scale(0.94) translateX(34px);
+      z-index: 2;
+    }
+
+    #video-1:checked ~ .video-deck .card-3,
+    #video-2:checked ~ .video-deck .card-1,
+    #video-3:checked ~ .video-deck .card-2 {
+      opacity: 0.16;
+      transform: scale(0.9) translateX(68px);
+      z-index: 1;
+    }
+
+    .deck-controls {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .deck-arrow {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #67e8f9;
+      color: #071014;
+      font-size: 1.35rem;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      user-select: none;
+    }
+
+    .deck-arrow:hover {
+      transform: translateY(-2px);
+    }
+
+    .deck-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .deck-dots label {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.28);
+      cursor: pointer;
+    }
+
+    #video-1:checked ~ .deck-dots label:nth-child(1),
+    #video-2:checked ~ .deck-dots label:nth-child(2),
+    #video-3:checked ~ .deck-dots label:nth-child(3) {
+      background: #7ee7f7;
     }
 
     .quote-panel {
@@ -388,8 +508,16 @@
         align-items: flex-start;
       }
 
+      .deck-section-head {
+        align-items: center;
+      }
+
       .section-copy {
         text-align: left;
+      }
+
+      .deck-section-head .section-copy {
+        text-align: center;
       }
 
       .nav {
@@ -404,6 +532,36 @@
       .damond-logo-fallback {
         min-height: 280px;
         padding: 32px;
+      }
+
+      .video-deck {
+        min-height: 600px;
+      }
+
+      .deck-card {
+        padding: 16px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .video-deck {
+        min-height: 560px;
+      }
+
+      .deck-card {
+        transform: scale(0.96) translateX(28px);
+      }
+
+      #video-1:checked ~ .video-deck .card-2,
+      #video-2:checked ~ .video-deck .card-3,
+      #video-3:checked ~ .video-deck .card-1 {
+        transform: scale(0.96) translateX(18px);
+      }
+
+      #video-1:checked ~ .video-deck .card-3,
+      #video-2:checked ~ .video-deck .card-1,
+      #video-3:checked ~ .video-deck .card-2 {
+        transform: scale(0.93) translateX(36px);
       }
     }
   </style>
@@ -540,90 +698,104 @@
       </div>
     </section>
 
-   <section id="content" class="section">
-  <div class="container">
-    <div class="section-head centered-section-head">
-      <div>
-        <p class="section-kicker">Featured content</p>
-        <h2>Damond Motorsports video deck.</h2>
+    <section id="content" class="section">
+      <div class="container">
+        <div class="section-head deck-section-head">
+          <div>
+            <p class="section-kicker">Featured content</p>
+            <h2>Damond Motorsports video deck.</h2>
+          </div>
+
+          <p class="section-copy">
+            Click through each long-form video tied to Damond Motorsports and the SlaterBilt Focus ST build.
+          </p>
+        </div>
+
+        <div class="video-deck-shell">
+          <input type="radio" name="videoDeck" id="video-1" checked>
+          <input type="radio" name="videoDeck" id="video-2">
+          <input type="radio" name="videoDeck" id="video-3">
+
+          <div class="video-deck">
+            <article class="deck-card card-1">
+              <div class="video-wrap">
+                <iframe
+                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                  title="Damond Motorsports Install Video"
+                  allowfullscreen>
+                </iframe>
+              </div>
+
+              <div class="video-description-box">
+                <div class="card-title">Damond Motorsports Install / Feature Video</div>
+                <p class="muted">
+                  Main long-form video covering the Damond Motorsports part install, why the upgrade matters,
+                  and how it fits into the SlaterBilt Focus ST build.
+                </p>
+              </div>
+
+              <div class="deck-controls">
+                <label for="video-3" class="deck-arrow">←</label>
+                <label for="video-2" class="deck-arrow">→</label>
+              </div>
+            </article>
+
+            <article class="deck-card card-2">
+              <div class="video-wrap">
+                <iframe
+                  src="https://www.youtube.com/embed/YOUR_SECOND_VIDEO_ID_HERE"
+                  title="Damond Motorsports Driving Impressions"
+                  allowfullscreen>
+                </iframe>
+              </div>
+
+              <div class="video-description-box">
+                <div class="card-title">Driving Impressions</div>
+                <p class="muted">
+                  Real-world feedback after driving the car with the Damond Motorsports upgrade installed.
+                  Use this card for follow-up impressions, review content, or long-term testing.
+                </p>
+              </div>
+
+              <div class="deck-controls">
+                <label for="video-1" class="deck-arrow">←</label>
+                <label for="video-3" class="deck-arrow">→</label>
+              </div>
+            </article>
+
+            <article class="deck-card card-3">
+              <div class="video-wrap">
+                <iframe
+                  src="https://www.youtube.com/embed/YOUR_THIRD_VIDEO_ID_HERE"
+                  title="Damond Motorsports Long-Term Review"
+                  allowfullscreen>
+                </iframe>
+              </div>
+
+              <div class="video-description-box">
+                <div class="card-title">Long-Term Review</div>
+                <p class="muted">
+                  Follow-up content showing how the part holds up after real use, street driving,
+                  pulls, abuse, and continued build progression.
+                </p>
+              </div>
+
+              <div class="deck-controls">
+                <label for="video-2" class="deck-arrow">←</label>
+                <label for="video-1" class="deck-arrow">→</label>
+              </div>
+            </article>
+          </div>
+
+          <div class="deck-dots">
+            <label for="video-1"></label>
+            <label for="video-2"></label>
+            <label for="video-3"></label>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <p class="section-copy centered-copy">
-        Click through each feature video tied to Damond Motorsports and the SlaterBilt Focus ST build.
-      </p>
-    </div>
-
-    <div class="video-deck-wrap">
-      <button class="deck-arrow deck-arrow-left" onclick="changeVideoCard(-1)">←</button>
-
-      <div class="video-deck">
-
-        <div class="video-card active">
-          <div class="video-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
-              title="Damond Motorsports Install Video"
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <div class="video-description-box">
-            <div class="card-title">Damond Motorsports Install / Feature Video</div>
-            <p class="muted">
-              Main long-form video covering the Damond Motorsports part install, why the upgrade matters,
-              and how it fits into the SlaterBilt Focus ST build.
-            </p>
-          </div>
-        </div>
-
-        <div class="video-card">
-          <div class="video-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/YOUR_SECOND_VIDEO_ID_HERE"
-              title="Damond Motorsports Driving Impressions"
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <div class="video-description-box">
-            <div class="card-title">Driving Impressions</div>
-            <p class="muted">
-              Real-world feedback after driving the car with the Damond Motorsports upgrade installed.
-              This card can be used for follow-up impressions, review content, or long-term testing.
-            </p>
-          </div>
-        </div>
-
-        <div class="video-card">
-          <div class="video-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/YOUR_THIRD_VIDEO_ID_HERE"
-              title="Damond Motorsports Long-Term Review"
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <div class="video-description-box">
-            <div class="card-title">Long-Term Review</div>
-            <p class="muted">
-              Follow-up content showing how the part holds up after real use, street driving,
-              pulls, abuse, and continued build progression.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-      <button class="deck-arrow deck-arrow-right" onclick="changeVideoCard(1)">→</button>
-    </div>
-
-    <div class="deck-dots">
-      <button class="deck-dot active" onclick="showVideoCard(0)"></button>
-      <button class="deck-dot" onclick="showVideoCard(1)"></button>
-      <button class="deck-dot" onclick="showVideoCard(2)"></button>
-    </div>
-  </div>
-</section>
     <section class="section">
       <div class="container">
         <div class="card quote-panel">
@@ -664,39 +836,5 @@
       Built to showcase the brand as part of the project, not just drop a logo on a page.
     </div>
   </div>
-  <script>
-  let currentVideoCard = 0;
-
-  function showVideoCard(index) {
-    const cards = document.querySelectorAll(".video-card");
-    const dots = document.querySelectorAll(".deck-dot");
-
-    currentVideoCard = index;
-
-    cards.forEach((card, i) => {
-      card.classList.toggle("active", i === currentVideoCard);
-    });
-
-    dots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === currentVideoCard);
-    });
-  }
-
-  function changeVideoCard(direction) {
-    const cards = document.querySelectorAll(".video-card");
-
-    currentVideoCard += direction;
-
-    if (currentVideoCard < 0) {
-      currentVideoCard = cards.length - 1;
-    }
-
-    if (currentVideoCard >= cards.length) {
-      currentVideoCard = 0;
-    }
-
-    showVideoCard(currentVideoCard);
-  }
-</script>
 </body>
 </html>
