@@ -540,57 +540,90 @@
       </div>
     </section>
 
-    <section id="content" class="section">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Featured content</p>
-            <h2>Videos and media tied to the brand.</h2>
-          </div>
-
-          <p class="section-copy">
-            Clean, uniform video placement tied directly to the Focus ST build and Damond Motorsports parts.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <div class="video-wrap">
-              <iframe
-                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
-                title="Damond Motorsports Feature Video"
-                allowfullscreen>
-              </iframe>
-            </div>
-
-            <div class="video-info">
-              <div class="card-title">Damond Motorsports Install / Feature Video</div>
-              <p class="muted">
-                Main long-form content covering the install, explanation, driving impression, or build integration.
-              </p>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="video-wrap short">
-              <iframe
-                src="https://www.youtube.com/embed/YOUR_SHORT_ID_HERE"
-                title="Damond Motorsports Short"
-                allowfullscreen>
-              </iframe>
-            </div>
-
-            <div class="video-info">
-              <div class="card-title">Short-Form Highlight</div>
-              <p class="muted">
-                Quick vertical content showing the install, before-and-after feel, or why the part matters.
-              </p>
-            </div>
-          </div>
-        </div>
+   <section id="content" class="section">
+  <div class="container">
+    <div class="section-head centered-section-head">
+      <div>
+        <p class="section-kicker">Featured content</p>
+        <h2>Damond Motorsports video deck.</h2>
       </div>
-    </section>
 
+      <p class="section-copy centered-copy">
+        Click through each feature video tied to Damond Motorsports and the SlaterBilt Focus ST build.
+      </p>
+    </div>
+
+    <div class="video-deck-wrap">
+      <button class="deck-arrow deck-arrow-left" onclick="changeVideoCard(-1)">←</button>
+
+      <div class="video-deck">
+
+        <div class="video-card active">
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+              title="Damond Motorsports Install Video"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="video-description-box">
+            <div class="card-title">Damond Motorsports Install / Feature Video</div>
+            <p class="muted">
+              Main long-form video covering the Damond Motorsports part install, why the upgrade matters,
+              and how it fits into the SlaterBilt Focus ST build.
+            </p>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/YOUR_SECOND_VIDEO_ID_HERE"
+              title="Damond Motorsports Driving Impressions"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="video-description-box">
+            <div class="card-title">Driving Impressions</div>
+            <p class="muted">
+              Real-world feedback after driving the car with the Damond Motorsports upgrade installed.
+              This card can be used for follow-up impressions, review content, or long-term testing.
+            </p>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/YOUR_THIRD_VIDEO_ID_HERE"
+              title="Damond Motorsports Long-Term Review"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="video-description-box">
+            <div class="card-title">Long-Term Review</div>
+            <p class="muted">
+              Follow-up content showing how the part holds up after real use, street driving,
+              pulls, abuse, and continued build progression.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="deck-arrow deck-arrow-right" onclick="changeVideoCard(1)">→</button>
+    </div>
+
+    <div class="deck-dots">
+      <button class="deck-dot active" onclick="showVideoCard(0)"></button>
+      <button class="deck-dot" onclick="showVideoCard(1)"></button>
+      <button class="deck-dot" onclick="showVideoCard(2)"></button>
+    </div>
+  </div>
+</section>
     <section class="section">
       <div class="container">
         <div class="card quote-panel">
