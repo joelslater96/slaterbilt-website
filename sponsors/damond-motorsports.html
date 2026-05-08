@@ -664,5 +664,39 @@
       Built to showcase the brand as part of the project, not just drop a logo on a page.
     </div>
   </div>
+  <script>
+  let currentVideoCard = 0;
+
+  function showVideoCard(index) {
+    const cards = document.querySelectorAll(".video-card");
+    const dots = document.querySelectorAll(".deck-dot");
+
+    currentVideoCard = index;
+
+    cards.forEach((card, i) => {
+      card.classList.toggle("active", i === currentVideoCard);
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentVideoCard);
+    });
+  }
+
+  function changeVideoCard(direction) {
+    const cards = document.querySelectorAll(".video-card");
+
+    currentVideoCard += direction;
+
+    if (currentVideoCard < 0) {
+      currentVideoCard = cards.length - 1;
+    }
+
+    if (currentVideoCard >= cards.length) {
+      currentVideoCard = 0;
+    }
+
+    showVideoCard(currentVideoCard);
+  }
+</script>
 </body>
 </html>
