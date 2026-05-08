@@ -702,19 +702,19 @@ h2 {
   border-radius: 26px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.09);
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  background: #101010;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
   opacity: 0;
   transform: scale(0.92) translateX(80px);
   pointer-events: none;
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
 }
 
 .video-description-box {
   margin-top: 18px;
   padding: 22px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.045);
+  background: #141414;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -727,6 +727,8 @@ h2 {
   transform: scale(1) translateX(0);
   pointer-events: auto;
   z-index: 5;
+  filter: none;
+  background: #101010;
 }
 
 #video-1:checked ~ .video-deck .card-2,
@@ -734,9 +736,10 @@ h2 {
 #video-3:checked ~ .video-deck .card-4,
 #video-4:checked ~ .video-deck .card-5,
 #video-5:checked ~ .video-deck .card-1 {
-  opacity: 0.28;
+  opacity: 0.12;
   transform: scale(0.94) translateX(34px);
-  z-index: 4;
+  z-index: 2;
+  filter: brightness(0.45);
 }
 
 #video-1:checked ~ .video-deck .card-3,
@@ -744,9 +747,10 @@ h2 {
 #video-3:checked ~ .video-deck .card-5,
 #video-4:checked ~ .video-deck .card-1,
 #video-5:checked ~ .video-deck .card-2 {
-  opacity: 0.14;
+  opacity: 0.06;
   transform: scale(0.9) translateX(68px);
-  z-index: 3;
+  z-index: 1;
+  filter: brightness(0.35);
 }
 
 .deck-controls {
