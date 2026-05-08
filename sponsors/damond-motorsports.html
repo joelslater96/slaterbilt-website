@@ -3,36 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Damond Motorsports | SlaterBilt</title>
+  <meta
+    name="description"
+    content="Damond Motorsports sponsor page for SlaterBilt featuring Focus ST performance parts, mount upgrades, install content, and real-world build integration."
+  />
 
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      background: #090909;
+      background: #0a0a0a;
       color: #ffffff;
       font-family: Arial, Helvetica, sans-serif;
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     .page-shell {
       min-height: 100vh;
       background:
-        radial-gradient(circle at top left, rgba(0, 195, 255, 0.16), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(128, 0, 255, 0.18), transparent 30%),
-        linear-gradient(180deg, #070707 0%, #111111 100%);
+        radial-gradient(circle at top, rgba(34, 211, 238, 0.08), transparent 30%),
+        linear-gradient(180deg, #080808 0%, #0a0a0a 100%);
     }
 
     .container {
-      width: min(1180px, calc(100% - 32px));
+      width: min(1200px, calc(100% - 32px));
       margin: 0 auto;
     }
 
@@ -40,340 +41,369 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(8, 8, 8, 0.82);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      background: rgba(10, 10, 10, 0.82);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .nav {
-      min-height: 72px;
+    .topbar-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      padding: 18px 0;
+      gap: 20px;
     }
 
     .brand {
-      font-size: 1.35rem;
+      font-size: 1.45rem;
       font-weight: 900;
-      letter-spacing: 0.16em;
-      color: #ffffff;
+      letter-spacing: 0.22em;
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      font-size: 0.85rem;
+    .brand-sub {
+      margin-top: 4px;
+      font-size: 0.72rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #d7d7d7;
+      letter-spacing: 0.24em;
+      color: rgba(255, 255, 255, 0.5);
     }
 
-    .nav-links a:hover {
-      color: #32d9ff;
+    .nav {
+      display: flex;
+      gap: 24px;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
     }
 
-    .sponsor-hero {
-      padding: 96px 0 64px;
+    .nav a:hover,
+    .nav a.active {
+      color: #7ee7f7;
     }
 
-    .sponsor-hero-grid {
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 80px 0 48px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(6, 8, 11, 0.32) 0%, rgba(6, 8, 11, 0.8) 100%),
+        radial-gradient(circle at top left, rgba(34, 211, 238, 0.16), transparent 30%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 44px;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
       align-items: center;
     }
 
     .eyebrow {
       display: inline-flex;
-      margin: 0 0 18px;
-      padding: 8px 14px;
-      border: 1px solid rgba(50, 217, 255, 0.35);
+      padding: 10px 16px;
       border-radius: 999px;
-      color: #32d9ff;
-      background: rgba(50, 217, 255, 0.08);
+      border: 1px solid rgba(34, 211, 238, 0.28);
+      background: rgba(34, 211, 238, 0.08);
+      color: #c9f8ff;
       font-size: 0.72rem;
-      font-weight: 800;
+      font-weight: 700;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 900;
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(3rem, 8vw, 6.8rem);
-      line-height: 0.9;
-      letter-spacing: -0.08em;
-      text-transform: uppercase;
+      margin-top: 18px;
+      font-size: clamp(3rem, 7vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
     }
 
-    .gradient-text {
-      background: linear-gradient(90deg, #32d9ff, #9f4cff);
-      -webkit-background-clip: text;
-      color: transparent;
+    h1 span,
+    .section-kicker,
+    .accent {
+      color: #7ee7f7;
     }
 
-    .hero-subtext {
-      margin: 26px 0 0;
-      max-width: 720px;
-      color: #d0d0d0;
-      font-size: 1.15rem;
-      line-height: 1.75;
+    .hero-copy,
+    .muted {
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.8;
     }
 
-    .hero-buttons {
+    .hero-copy {
+      margin: 20px 0 0;
+      max-width: 640px;
+      font-size: 1.04rem;
+    }
+
+    .button-row {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 34px;
+      margin-top: 28px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 0 22px;
-      border-radius: 999px;
-      font-weight: 900;
+      padding: 14px 22px;
+      border-radius: 18px;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.18em;
       font-size: 0.78rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+      font-weight: 800;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
+      transform: translateY(-1px);
     }
 
-    .primary-btn {
-      background: linear-gradient(90deg, #32d9ff, #8d4dff);
-      color: #050505;
-      box-shadow: 0 0 28px rgba(50, 217, 255, 0.22);
+    .btn-primary {
+      background: #67e8f9;
+      color: #071014;
     }
 
-    .secondary-btn {
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.05);
-      color: #ffffff;
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
     }
 
-    .sponsor-hero-card {
-      position: relative;
-      min-height: 430px;
-      border-radius: 32px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.12);
-      background:
-        linear-gradient(145deg, rgba(50,217,255,0.18), rgba(159,76,255,0.15)),
-        #111111;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.55);
-    }
-
-    .sponsor-hero-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.12), transparent 28%),
-        radial-gradient(circle at 30% 20%, rgba(50,217,255,0.35), transparent 32%),
-        radial-gradient(circle at 80% 80%, rgba(159,76,255,0.35), transparent 32%);
-      opacity: 0.95;
-    }
-
-    .sponsor-hero-card::after {
-      content: "DAMOND";
-      position: absolute;
-      left: -18px;
-      bottom: 28px;
-      font-size: 6rem;
-      font-weight: 900;
-      letter-spacing: -0.09em;
-      color: rgba(255,255,255,0.055);
-      transform: rotate(-8deg);
-    }
-
-    .logo-panel {
-      position: relative;
-      z-index: 2;
-      margin: 28px;
-      min-height: 370px;
+    .hero-image-card,
+    .card {
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
       border-radius: 26px;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: contain;
+      padding: 48px;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .damond-logo-fallback {
+      min-height: 420px;
+      padding: 48px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 28px;
+      justify-content: center;
       background:
-        linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.82) 100%),
-        rgba(0,0,0,0.24);
-      border: 1px solid rgba(255,255,255,0.12);
+        radial-gradient(circle at top, rgba(34, 211, 238, 0.08), transparent 36%),
+        rgba(255, 255, 255, 0.03);
     }
 
-    .logo-panel h2 {
-      margin: 0;
-      font-size: 2.4rem;
+    .damond-logo-fallback .small-label {
+      margin-bottom: 16px;
+    }
+
+    .damond-logo-fallback h2 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
       line-height: 0.95;
+      letter-spacing: -0.05em;
       text-transform: uppercase;
-      letter-spacing: -0.06em;
     }
 
-    .logo-panel p {
-      margin: 12px 0 0;
-      color: #d8d8d8;
-      line-height: 1.55;
+    .section {
+      padding: 52px 0;
     }
 
-    section {
-      padding: 54px 0;
-    }
-
-    .section-heading {
-      max-width: 780px;
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
       margin-bottom: 28px;
     }
 
-    .section-heading h2 {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3.6rem);
-      letter-spacing: -0.06em;
+    .section-kicker {
+      margin: 0 0 10px;
+      font-size: 0.75rem;
+      font-weight: 800;
       text-transform: uppercase;
+      letter-spacing: 0.22em;
     }
 
-    .section-heading p {
-      color: #cfcfcf;
-      line-height: 1.7;
-      font-size: 1.05rem;
+    h2 {
+      font-size: clamp(2rem, 5vw, 3.1rem);
     }
 
-    .card-grid {
+    .section-copy {
+      max-width: 540px;
+      text-align: right;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.8;
+    }
+
+    .grid-2,
+    .grid-3,
+    .stats-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .content-card {
-      padding: 28px;
-      border-radius: 26px;
-      background: rgba(255,255,255,0.055);
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.28);
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .content-card h3 {
-      margin: 0 0 14px;
-      color: #ffffff;
-      font-size: 1.35rem;
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .metric {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #7ee7f7;
+    }
+
+    .metric-label,
+    .small-label {
+      margin-top: 10px;
+      font-size: 0.76rem;
       text-transform: uppercase;
-      letter-spacing: -0.03em;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.48);
     }
 
-    .content-card p {
-      margin: 0;
-      color: #cfcfcf;
-      line-height: 1.7;
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 900;
     }
 
-    .feature-band {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.035);
-    }
-
-    .feature-list {
+    .list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+      gap: 12px;
     }
 
-    .feature-pill {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(0,0,0,0.35);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: #e8e8e8;
+    .list li {
+      display: flex;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.65;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      margin-top: 8px;
+      border-radius: 999px;
+      background: #7ee7f7;
+      flex: 0 0 auto;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.7rem;
       font-weight: 800;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.75);
     }
 
-    .video-frame {
+    .video-wrap {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: 28px;
-      overflow: hidden;
-      background: #000;
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: 0 24px 70px rgba(0,0,0,0.5);
+      padding-top: 56.25%;
+      background: #050505;
     }
 
-    .video-frame iframe {
+    .video-wrap.short {
+      padding-top: 177.77%;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
+      border: 0;
     }
 
-    .cta-card {
-      padding: 44px;
-      border-radius: 32px;
+    .video-info {
+      padding: 22px 0 0;
+    }
+
+    .quote-panel {
       background:
-        radial-gradient(circle at top left, rgba(50,217,255,0.22), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(159,76,255,0.22), transparent 32%),
-        rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
+        linear-gradient(90deg, rgba(99, 102, 241, 0.1), rgba(255, 255, 255, 0.04), rgba(34, 211, 238, 0.1));
+    }
+
+    .footer-note {
       text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      padding: 8px 0 56px;
+      font-size: 0.92rem;
     }
 
-    .cta-card h2 {
-      margin: 0;
-      font-size: clamp(2rem, 5vw, 4.4rem);
-      letter-spacing: -0.07em;
-      text-transform: uppercase;
-    }
-
-    .cta-card p {
-      max-width: 760px;
-      margin: 18px auto 28px;
-      color: #d0d0d0;
-      line-height: 1.7;
-      font-size: 1.05rem;
-    }
-
-    footer {
-      padding: 34px 0;
-      color: #8f8f8f;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      text-align: center;
-      font-size: 0.85rem;
-    }
-
-    @media (max-width: 900px) {
-      .sponsor-hero-grid,
-      .card-grid,
-      .feature-list {
+    @media (max-width: 980px) {
+      .hero-inner,
+      .grid-2,
+      .grid-3,
+      .stats-grid {
         grid-template-columns: 1fr;
       }
 
-      .nav {
+      .section-head {
         flex-direction: column;
-        padding: 18px 0;
+        align-items: flex-start;
       }
 
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
+      .section-copy {
+        text-align: left;
       }
 
-      .sponsor-hero {
-        padding-top: 62px;
+      .nav {
+        display: none;
       }
 
-      .sponsor-hero-card {
-        min-height: 330px;
+      .hero-image {
+        min-height: 280px;
+        padding: 32px;
       }
 
-      .logo-panel {
-        min-height: 270px;
+      .damond-logo-fallback {
+        min-height: 280px;
+        padding: 32px;
       }
     }
   </style>
@@ -381,164 +411,225 @@
 
 <body>
   <div class="page-shell">
-
     <header class="topbar">
-      <div class="container nav">
-        <a href="../index.html" class="brand">SLATERBILT</a>
+      <div class="container topbar-inner">
+        <div>
+          <a href="../index.html" class="brand">SLATERBILT</a>
+          <div class="brand-sub">Sponsor Detail Page</div>
+        </div>
 
-        <nav class="nav-links">
-          <a href="../index.html#builds">Builds</a>
-          <a href="../index.html#media">Media Kit</a>
-          <a href="../index.html#sponsors">Sponsors</a>
-          <a href="../index.html#contact">Contact</a>
+        <nav class="nav">
+          <a href="../index.html">Home</a>
+          <a href="../focus.html">Focus Build</a>
+          <a href="../sponsors.html" class="active">Sponsors</a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <section class="sponsor-hero">
-        <div class="container sponsor-hero-grid">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div class="eyebrow">Official Build Partner</div>
 
-          <div>
-            <p class="eyebrow">Official Sponsor</p>
+          <h1>
+            Damond Motorsports
+            <span>Parts That Fix The Weak Points.</span>
+          </h1>
 
-            <h1>
+          <p class="hero-copy">
+            Damond Motorsports supports the SlaterBilt Focus ST build with performance parts designed around
+            real-world use, better driving feel, and solving the weak points that show up when a car is actually driven hard.
+            This page ties the brand into the install content, driving impressions, and long-term build progression.
+          </p>
+
+          <div class="pill-row">
+            <div class="pill">Focus ST</div>
+            <div class="pill">Motor Mounts</div>
+            <div class="pill">Handling Support</div>
+            <div class="pill">Driver Feel</div>
+          </div>
+
+          <div class="button-row">
+            <a href="#content" class="btn btn-primary">View Content</a>
+            <a href="https://damondmotorsports.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit Damond</a>
+            <a href="../sponsors.html" class="btn btn-secondary">← Back To Sponsors</a>
+          </div>
+        </div>
+
+        <div class="hero-image-card">
+          <img
+            src="../images/DAMOND.png"
+            alt="Damond Motorsports logo"
+            class="hero-image"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+
+          <div class="damond-logo-fallback" style="display: none;">
+            <div class="small-label">Performance Parts</div>
+            <h2>
               Damond<br />
-              <span class="gradient-text">Motorsports</span>
-            </h1>
-
-            <p class="hero-subtext">
-              Damond Motorsports builds the kind of parts that actually belong on a driven enthusiast car.
-              Stronger mounts, sharper feel, better control, and real-world performance upgrades for builds
-              that are meant to be used — not parked.
-            </p>
-
-            <div class="hero-buttons">
-              <a class="btn primary-btn" href="https://damondmotorsports.com/" target="_blank">
-                Visit Damond
-              </a>
-
-              <a class="btn secondary-btn" href="../index.html#sponsors">
-                Back to Sponsors
-              </a>
-            </div>
-          </div>
-
-          <div class="sponsor-hero-card">
-            <div class="logo-panel">
-              <p class="eyebrow">Performance Parts</p>
-              <h2>Built For Drivers</h2>
-              <p>
-                Supporting the SlaterBilt Focus ST with parts that improve the way the car feels,
-                handles, and takes abuse.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Why It Matters</p>
-            <h2>Real Parts For A Real Build</h2>
-            <p>
-              The SlaterBilt Focus ST is not a catalog car. It gets driven, filmed, tested,
-              and pushed. Damond Motorsports fits the build because their parts focus on
-              function, reliability, and making the car feel more connected.
+              <span class="accent">Motorsports</span>
+            </h2>
+            <p class="muted">
+              Add your Damond logo image at <strong>../images/DAMOND.png</strong>
             </p>
           </div>
-
-          <div class="card-grid">
-            <div class="content-card">
-              <h3>Sharper Feel</h3>
-              <p>
-                Upgraded supporting parts help tighten the driving experience and reduce the sloppy,
-                worn-out feeling common on modified street cars.
-              </p>
-            </div>
-
-            <div class="content-card">
-              <h3>Built To Be Used</h3>
-              <p>
-                Damond parts make sense on a car that sees real miles, real pulls, real abuse,
-                and real-world testing.
-              </p>
-            </div>
-
-            <div class="content-card">
-              <h3>Content Tested</h3>
-              <p>
-                Installs, driving impressions, short-form clips, and long-form reviews will show
-                how the parts actually perform on the build.
-              </p>
-            </div>
-          </div>
         </div>
-      </section>
-
-      <section class="feature-band">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Featured On The Build</p>
-            <h2>Focus ST Support Mods</h2>
-          </div>
-
-          <div class="feature-list">
-            <div class="feature-pill">Motor Mounts</div>
-            <div class="feature-pill">Handling Support</div>
-            <div class="feature-pill">Drivetrain Feel</div>
-            <div class="feature-pill">Street-Tested Parts</div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Video Feature</p>
-            <h2>Damond Motorsports Content</h2>
-            <p>
-              Add the install video, review, or driving impression video here once it is live.
-            </p>
-          </div>
-
-          <div class="video-frame">
-            <iframe
-              src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
-              title="Damond Motorsports SlaterBilt Feature"
-              frameborder="0"
-              allowfullscreen>
-            </iframe>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="cta-card">
-            <h2>Built. Driven. Actually Used.</h2>
-            <p>
-              SlaterBilt partners with brands that make sense for real enthusiast builds.
-              Damond Motorsports earns that spot by making parts that improve the car where it matters:
-              feel, control, durability, and driver confidence.
-            </p>
-
-            <a class="btn primary-btn" href="https://damondmotorsports.com/" target="_blank">
-              Shop Damond Motorsports
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container">
-        © SlaterBilt — Sponsor Feature Page
       </div>
-    </footer>
+    </section>
 
+    <section class="section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="card">
+            <div class="metric">ST</div>
+            <div class="metric-label">Primary Build Platform</div>
+          </div>
+
+          <div class="card">
+            <div class="metric">Mounts</div>
+            <div class="metric-label">Featured Product Category</div>
+          </div>
+
+          <div class="card">
+            <div class="metric">Ongoing</div>
+            <div class="metric-label">Content Integration</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Brand role</p>
+            <h2>Where this sponsor shows up.</h2>
+          </div>
+
+          <p class="section-copy">
+            This section makes it clear Damond Motorsports is tied to the real driving experience of the Focus ST build.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-title">Fixing The Weak Points</div>
+            <p class="muted">
+              Damond parts fit the kind of upgrades that actually matter on a modified Focus ST —
+              the stuff that improves feel, durability, and confidence instead of just adding noise.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Real Install Content</div>
+            <p class="muted">
+              The brand naturally fits into garage install videos, first impressions, follow-up reviews,
+              and long-term updates as the car continues to evolve.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Driver-Focused Upgrades</div>
+            <p class="muted">
+              Damond Motorsports supports the parts of the build that make the car feel more connected,
+              more controlled, and more ready for real use.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Featured content</p>
+            <h2>Videos and media tied to the brand.</h2>
+          </div>
+
+          <p class="section-copy">
+            Clean, uniform video placement tied directly to the Focus ST build and Damond Motorsports parts.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                title="Damond Motorsports Feature Video"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <div class="video-info">
+              <div class="card-title">Damond Motorsports Install / Feature Video</div>
+              <p class="muted">
+                Main long-form content covering the install, explanation, driving impression, or build integration.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="video-wrap short">
+              <iframe
+                src="https://www.youtube.com/embed/YOUR_SHORT_ID_HERE"
+                title="Damond Motorsports Short"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <div class="video-info">
+              <div class="card-title">Short-Form Highlight</div>
+              <p class="muted">
+                Quick vertical content showing the install, before-and-after feel, or why the part matters.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card quote-panel">
+          <div class="section-head" style="margin-bottom: 20px; align-items: flex-start;">
+            <div>
+              <p class="section-kicker">Why This Page Exists</p>
+              <h2>A Final Thank You to Damond Motorsports</h2>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div>
+              <p class="muted">
+                Damond Motorsports is part of the SlaterBilt Focus ST build because their parts solve real problems.
+                This is not just a logo placement — it is a brand tied directly to the way the car drives, feels,
+                and holds up as the build progresses.
+              </p>
+            </div>
+
+            <div>
+              <ul class="list">
+                <li><span class="dot"></span><span>Performance parts that improve real drivability</span></li>
+                <li><span class="dot"></span><span>Clean fit for install and review content</span></li>
+                <li><span class="dot"></span><span>Focused on function, feel, and long-term use</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <a href="https://damondmotorsports.com" target="_blank" rel="noopener" class="btn btn-primary">Visit Damond Motorsports</a>
+            <a href="../sponsors.html" class="btn btn-secondary">← Back To Sponsors</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container footer-note">
+      Built to showcase the brand as part of the project, not just drop a logo on a page.
+    </div>
   </div>
 </body>
 </html>
