@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>cp-e™ Performance | SlaterBilt</title>
+  <meta
+    name="description"
+    content="cp-e Performance on the SlaterBilt Focus ST: intercooler, charge pipes, Austenite exhaust, installation coverage, and driving impressions."
+  />
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: #0a0a0a;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .page-shell {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(101, 230, 0, 0.08), transparent 30%),
+        linear-gradient(180deg, #080808 0%, #0a0a0a 100%);
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(10, 10, 10, 0.82);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+    }
+
+    .brand-sub {
+      margin-top: 4px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: #65E600;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 80px 0 48px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(6, 8, 11, 0.32) 0%, rgba(6, 8, 11, 0.8) 100%),
+        radial-gradient(circle at top left, rgba(101, 230, 0, 0.16), transparent 30%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(101, 230, 0, 0.28);
+      background: rgba(101, 230, 0, 0.08);
+      color: #c8ff9e;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 900;
+    }
+
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(3rem, 7vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    h1 span,
+    .section-kicker,
+    .accent {
+      color: #65E600;
+    }
+
+    .hero-copy,
+    .muted {
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.8;
+    }
+
+    .hero-copy {
+      margin: 20px 0 0;
+      max-width: 640px;
+      font-size: 1.04rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+      font-weight: 800;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: #65E600;
+      color: #0a0a0a;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+    }
+
+    .hero-image-card,
+    .card {
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      border-radius: 26px;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: contain;
+      padding: 48px;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .cpe-logo-fallback {
+      min-height: 420px;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        radial-gradient(circle at top, rgba(101, 230, 0, 0.08), transparent 36%),
+        rgba(255, 255, 255, 0.03);
+    }
+
+    .cpe-logo-fallback .small-label {
+      margin-bottom: 16px;
+    }
+
+    .cpe-logo-fallback h2 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 52px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      margin: 0 0 10px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 3.1rem);
+    }
+
+    .section-copy {
+      max-width: 540px;
+      text-align: right;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.8;
+    }
+
+    .grid-2,
+    .grid-3,
+    .stats-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .metric {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #65E600;
+    }
+
+    .metric-label,
+    .small-label {
+      margin-top: 10px;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.48);
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+    }
+
+    .list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .list li {
+      display: flex;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.65;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      margin-top: 8px;
+      border-radius: 999px;
+      background: #65E600;
+      flex: 0 0 auto;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: #050505;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .deck-section-head {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .deck-section-head .section-copy {
+      text-align: center;
+      max-width: 720px;
+    }
+
+    .video-deck-shell {
+      position: relative;
+      width: min(900px, 100%);
+      margin: 0 auto;
+    }
+
+    .video-deck-shell input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .video-deck {
+      position: relative;
+      min-height: 690px;
+      perspective: 1200px;
+    }
+
+   .deck-card {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  padding: 24px;
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: #111111;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: scale(0.92) translateX(80px);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+   .video-description-box {
+  margin-top: 18px;
+  padding: 22px;
+  border-radius: 20px;
+  background: #161616;
+    }
+
+    #video-1:checked ~ .video-deck .card-1,
+    #video-2:checked ~ .video-deck .card-2,
+    #video-3:checked ~ .video-deck .card-3 {
+      opacity: 1;
+      transform: scale(1) translateX(0);
+      pointer-events: auto;
+      z-index: 3;
+    }
+
+   #video-1:checked ~ .video-deck .card-2,
+#video-2:checked ~ .video-deck .card-3,
+#video-3:checked ~ .video-deck .card-1 {
+  opacity: 1;
+  transform: scale(0.94) translateX(34px);
+  z-index: 2;
+  background: #0d0d0d;
+}
+
+#video-1:checked ~ .video-deck .card-3,
+#video-2:checked ~ .video-deck .card-1,
+#video-3:checked ~ .video-deck .card-2 {
+  opacity: 1;
+  transform: scale(0.9) translateX(68px);
+  z-index: 1;
+  background: #090909;
+}
+
+    .deck-controls {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .deck-arrow {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #65E600;
+      color: #0a0a0a;
+      font-size: 1.35rem;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      user-select: none;
+    }
+
+    .deck-arrow:hover {
+      transform: translateY(-2px);
+    }
+
+    .deck-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .deck-dots label {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.28);
+      cursor: pointer;
+    }
+
+    #video-1:checked ~ .deck-dots label:nth-child(1),
+    #video-2:checked ~ .deck-dots label:nth-child(2),
+    #video-3:checked ~ .deck-dots label:nth-child(3) {
+      background: #65E600;
+    }
+
+    .quote-panel {
+      background:
+        linear-gradient(90deg, rgba(101, 230, 0, 0.1), rgba(255, 255, 255, 0.04), rgba(101, 230, 0, 0.1));
+    }
+
+    .footer-note {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      padding: 8px 0 56px;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner,
+      .grid-2,
+      .grid-3,
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .deck-section-head {
+        align-items: center;
+      }
+
+      .section-copy {
+        text-align: left;
+      }
+
+      .deck-section-head .section-copy {
+        text-align: center;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero-image {
+        min-height: 280px;
+        padding: 32px;
+      }
+
+      .cpe-logo-fallback {
+        min-height: 280px;
+        padding: 32px;
+      }
+
+      .video-deck {
+        min-height: 600px;
+      }
+
+      .deck-card {
+        padding: 16px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .video-deck {
+        min-height: 560px;
+      }
+
+      .deck-card {
+        transform: scale(0.96) translateX(28px);
+      }
+
+      #video-1:checked ~ .video-deck .card-2,
+      #video-2:checked ~ .video-deck .card-3,
+      #video-3:checked ~ .video-deck .card-1 {
+        transform: scale(0.96) translateX(18px);
+      }
+
+      #video-1:checked ~ .video-deck .card-3,
+      #video-2:checked ~ .video-deck .card-1,
+      #video-3:checked ~ .video-deck .card-2 {
+        transform: scale(0.93) translateX(36px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div>
+          <a href="../index.html" class="brand">SLATERBILT</a>
+          <div class="brand-sub">Sponsor Detail Page</div>
+        </div>
+
+        <nav class="nav">
+          <a href="../index.html">Home</a>
+          <a href="../focus.html">Focus Build</a>
+          <a href="../sponsors.html" class="active">Sponsors</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div class="eyebrow">Focus ST Performance Partner</div>
+
+          <h1>
+            cp-e™ Performance
+            <span>Built To Handle More.</span>
+          </h1>
+
+          <p class="hero-copy">
+            cp-e performance hardware is featured on the SlaterBilt Focus ST, from the Austenite exhaust to the intercooler and charge-pipe setup. Follow the installs, fitment details, sound clips, and real driving impressions as the build progresses.
+          </p>
+
+          <div class="pill-row">
+            <div class="pill">Focus ST</div>
+            <div class="pill">Austenite Exhaust</div>
+            <div class="pill">Intercooler</div>
+            <div class="pill">Charge Pipes</div>
+          </div>
+
+          <div class="button-row">
+            <a href="#content" class="btn btn-primary">View Content</a>
+            <a href="https://cp-e.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit cp-e</a>
+            <a href="../sponsors.html" class="btn btn-secondary">← Back To Sponsors</a>
+          </div>
+        </div>
+
+        <div class="hero-image-card">
+          <img
+            src="../images/CPE.png"
+            alt="cp-e™ Performance logo"
+            class="hero-image"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+
+          <div class="cpe-logo-fallback" style="display: none;">
+            <div class="small-label">Performance Engineering</div>
+            <h2>
+              cp-e<br />
+              <span class="accent">Performance</span>
+            </h2>
+            <p class="muted">
+              Place the cp-e logo image at <strong>../images/CPE.png</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="card">
+            <div class="metric">ST</div>
+            <div class="metric-label">Primary Build Platform</div>
+          </div>
+
+          <div class="card">
+            <div class="metric">Boost</div>
+            <div class="metric-label">Performance Focus</div>
+          </div>
+
+          <div class="card">
+            <div class="metric">Ongoing</div>
+            <div class="metric-label">Content Integration</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Brand role</p>
+            <h2>Where this sponsor shows up.</h2>
+          </div>
+
+          <p class="section-copy">
+            Boost delivery is a major part of the Focus ST power plan. This section follows how cp-e performance components fit into the build.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-title">Supporting The Power Goal</div>
+            <p class="muted">
+              The cp-e intercooler and charge pipes support the airflow and charge-air cooling side of the build as power goals increase.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Real Install Content</div>
+            <p class="muted">
+              Follow hands-on intercooler and charge-pipe installation, including the MAP sensor adapter fitment issue encountered during the install.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Boosting With Headroom</div>
+            <p class="muted">
+              The cp-e Austenite exhaust is part of the car’s personality. Follow sound clips, driving footage, and updates from daily use.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content" class="section">
+      <div class="container">
+        <div class="section-head deck-section-head">
+          <div>
+            <p class="section-kicker">Featured content</p>
+            <h2>cp-e™ Performance video deck.</h2>
+          </div>
+
+          <p class="section-copy">
+            Browse install videos, exhaust features, and follow-up driving content featuring cp-e hardware on the SlaterBilt Focus ST.
+          </p>
+        </div>
+
+        <div class="video-deck-shell">
+          <input type="radio" name="videoDeck" id="video-1" checked>
+          <input type="radio" name="videoDeck" id="video-2">
+          <input type="radio" name="videoDeck" id="video-3">
+
+          <div class="video-deck">
+            <article class="deck-card card-1">
+              <div class="video-wrap">
+                <iframe
+                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                  title="cp-e™ Performance Install Video"
+                  allowfullscreen>
+                </iframe>
+              </div>
+
+              <div class="video-description-box">
+                <div class="card-title">cp-e Boost System Installation</div>
+                <p class="muted">
+                  Installation coverage for the cp-e intercooler and charge pipes, including fitment, the MAP sensor adapter challenge, and the finished setup.
+                </p>
+              </div>
+
+              <div class="deck-controls">
+                <label for="video-3" class="deck-arrow">←</label>
+                <label for="video-2" class="deck-arrow">→</label>
+              </div>
+            </article>
+
+            <article class="deck-card card-2">
+              <div class="video-wrap">
+                <iframe
+                  src="https://www.youtube.com/embed/YOUR_SECOND_VIDEO_ID_HERE"
+                  title="cp-e™ Performance Tuning & Boosting Impressions"
+                  allowfullscreen>
+                </iframe>
+              </div>
+
+              <div class="video-description-box">
+                <div class="card-title">Tuning & Boosting Impressions</div>
+                <p class="muted">
+                  Hear the cp-e Austenite exhaust and see how it fits into the Focus ST’s evolving street build.
+                </p>
+              </div>
+
+              <div class="deck-controls">
+                <label for="video-1" class="deck-arrow">←</label>
+                <label for="video-3" class="deck-arrow">→</label>
+              </div>
+            </article>
+
+            <article class="deck-card card-3">
+              <div class="video-wrap">
+                <iframe
+                  src="https://www.youtube.com/embed/YOUR_THIRD_VIDEO_ID_HERE"
+                  title="cp-e™ Performance Boost System Results & Updates"
+                  allowfullscreen>
+                </iframe>
+              </div>
+
+              <div class="video-description-box">
+                <div class="card-title">Boost System Results & Updates</div>
+                <p class="muted">
+                  Follow real-world driving impressions, intake temperatures where measured, and longer-term feedback on the installed hardware.
+                </p>
+              </div>
+
+              <div class="deck-controls">
+                <label for="video-2" class="deck-arrow">←</label>
+                <label for="video-1" class="deck-arrow">→</label>
+              </div>
+            </article>
+          </div>
+
+          <div class="deck-dots">
+            <label for="video-1"></label>
+            <label for="video-2"></label>
+            <label for="video-3"></label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card quote-panel">
+          <div class="section-head" style="margin-bottom: 20px; align-items: flex-start;">
+            <div>
+              <p class="section-kicker">Why This Page Exists</p>
+              <h2>A Final Thank You to cp-e™ Performance</h2>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div>
+              <p class="muted">
+                cp-e components have a visible role in the SlaterBilt Focus ST build. This page collects the install process, lessons learned, and real-world footage for anyone considering similar upgrades.
+              </p>
+            </div>
+
+            <div>
+              <ul class="list">
+                <li><span class="dot"></span><span>Intercooler and charge-pipe upgrades</span></li>
+                <li><span class="dot"></span><span>Boost-system installation and tuning coverage</span></li>
+                <li><span class="dot"></span><span>Install details and long-term driving feedback</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <a href="https://cp-e.com" target="_blank" rel="noopener" class="btn btn-primary">Visit cp-e™ Performance</a>
+            <a href="../sponsors.html" class="btn btn-secondary">← Back To Sponsors</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container footer-note">
+      SlaterBilt × cp-e Performance | Follow the build.
+    </div>
+  </div>
+</body>
+</html>
