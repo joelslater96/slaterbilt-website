@@ -1,236 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SlaterBilt</title>
-  <meta
-    name="description"
-    content="Performance Builds, Honest Reviews, and Real Ownership Content."
-  />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SlaterBilt</title><meta name="description" content="Performance Builds, Honest Reviews, and Real Ownership Content.">
+<link rel="stylesheet" href="style.css">
+<style>
+:root{--accent:#65E600}
+body{background:#0a0a0a;color:#fff}
+.hero-title span,.section-kicker,.stat-value,.nav a:hover{color:var(--accent)}
+.btn-primary,.dot{background:var(--accent);color:#0a0a0a}
+.bg-orb{background:rgba(101,230,0,.12)}
+.panel-accent{background:linear-gradient(120deg,rgba(101,230,0,.1),#111)}
+section[id]{scroll-margin-top:110px}
+.sponsor-panel{display:block}
+.sponsor-heading{display:flex;justify-content:space-between;align-items:start;gap:24px;margin-bottom:28px}
+.sponsor-heading>div{max-width:760px}
+.sponsor-all{display:inline-block;color:var(--accent);font-weight:800;white-space:nowrap;padding:12px 0}
+.sponsor-deck{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.sponsor-flip{min-width:0;perspective:1200px}
+.sponsor-inner{position:relative;min-height:340px;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.sponsor-flip.is-flipped .sponsor-inner{transform:rotateY(180deg)}
+.sponsor-face{box-sizing:border-box;position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:26px;border:1px solid rgba(101,230,0,.25);border-radius:24px;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#111;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.25)}
+.sponsor-face h3{margin:0;font-size:1.2rem}
+.sponsor-logo{display:flex;align-items:center;justify-content:center;width:100%;height:110px}
+.sponsor-logo img{max-width:100%;max-height:100%;object-fit:contain}
+.sponsor-back{transform:rotateY(180deg);background:linear-gradient(145deg,#17220d,#101010)}
+.sponsor-back p{margin:0;color:#ccc;font-size:.95rem;line-height:1.6}
+.sponsor-back .section-kicker{color:var(--accent);font-size:.7rem}
+.sponsor-toggle,.sponsor-return{font:inherit;cursor:pointer;border:0;color:var(--accent);background:transparent;padding:10px}
+.sponsor-toggle{font-weight:800}
+.sponsor-link{display:inline-block;background:var(--accent);color:#0a0a0a;text-decoration:none;font-weight:800;border-radius:12px;padding:12px 16px}
+.sponsor-return{font-size:.8rem;color:#ccc}
+.sponsor-face :focus-visible,.sponsor-all:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+@media(max-width:980px){.sponsor-deck{grid-template-columns:repeat(2,minmax(0,1fr))}.nav{display:flex!important;flex-wrap:wrap;gap:14px}.topbar-inner{flex-wrap:wrap}}
+@media(max-width:620px){.sponsor-deck{grid-template-columns:1fr}.sponsor-heading{flex-direction:column;gap:8px}.sponsor-inner{min-height:350px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sponsor-inner{transition:none}}
+/* Without JavaScript, show every sponsor description and page link. */
+.sponsor-flip:not(.enhanced) .sponsor-inner{min-height:0}
+.sponsor-flip:not(.enhanced) .sponsor-front{display:none}
+.sponsor-flip:not(.enhanced) .sponsor-back{position:relative;transform:none;min-height:340px}
+.sponsor-flip:not(.enhanced) .sponsor-return{display:none}
+</style>
 </head>
 <body>
-  <div class="site-shell">
-    <div class="bg-orb orb-one"></div>
-    <div class="bg-orb orb-two"></div>
-
-    <header class="topbar">
-      <div class="container topbar-inner">
-        <div>
-          <div class="brand">SLATERBILT</div>
-          <div class="brand-sub">Builds • Reviews • Content</div>
-        </div>
-
-        <nav class="nav">
-          <a href="#builds">Builds</a>
-          <a href="#media">Media Kit</a>
-          <a href="sponsors.html">Sponsors</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
-
-    <section class="hero hero-focus">
-      <div class="hero-overlay"></div>
-
-      <div class="container hero-stack">
-        <div class="hero-text">
-          <div class="pill">Real Builds • Real Ownership • Honest Reviews</div>
-
-          <h1 class="hero-title">
-            Built, Driven,
-            <span>and Actually Used.</span>
-          </h1>
-
-          <p class="hero-copy">
-            SlaterBilt is an automotive content brand focused on real enthusiast ownership,
-            honest reviews, build progress, and parts that get tested in the real world instead
-            of just talked about online. We review cars, trucks, jeeps, motorcycles, and parts. 
-            From mild to wild, SlaterBilt is your one stop shop for Entertaining yet Educational 
-            automotive content. 
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#builds">Explore Builds</a>
-            <a class="btn btn-secondary" href="#partners">Work With SlaterBilt</a>
-          </div>
-        </div>
-
-        <div class="stats-grid hero-stats-grid">
-          <div class="stat-card">
-            <div class="stat-value">1.5k+</div>
-            <div class="stat-label">YouTube</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value">4.6k+</div>
-            <div class="stat-label">TikTok</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value">8.9k+</div>
-            <div class="stat-label">Meta</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value">1M+</div>
-            <div class="stat-label">Monthly Views</div>
-          </div>
-        </div>
-
-       <div class="hero-image-wrap">
-  <div class="hero-image-card">
-    <img src="images/IMG_0017 (1).JPEG" alt="Blue Focus ST" class="hero-car-image" />
-  </div>
+<div class="site-shell">
+<div class="bg-orb orb-one"></div><div class="bg-orb orb-two"></div>
+<header class="topbar"><div class="container topbar-inner">
+<div><div class="brand">SLATERBILT</div><div class="brand-sub">Builds • Reviews • Content</div></div>
+<nav class="nav" aria-label="Main navigation"><a href="#builds">Builds</a><a href="#media">Media Kit</a><a href="#partners">Sponsors</a><a href="#contact">Contact</a></nav>
+</div></header>
+<main>
+<section class="hero hero-focus"><div class="hero-overlay"></div><div class="container hero-stack">
+<div class="hero-text"><div class="pill">Real Builds • Real Ownership • Honest Reviews</div>
+<h1 class="hero-title">Built, Driven, <span>and Actually Used.</span></h1>
+<p class="hero-copy">SlaterBilt is an automotive content brand focused on real enthusiast ownership, honest reviews, build progress, and parts that get tested in the real world instead of just talked about online. We review cars, trucks, jeeps, motorcycles, and parts. From mild to wild, SlaterBilt is your one stop shop for entertaining yet educational automotive content.</p>
+<div class="hero-actions"><a class="btn btn-primary" href="#builds">Explore Builds</a><a class="btn btn-secondary" href="#partners">Work With SlaterBilt</a></div></div>
+<div class="stats-grid hero-stats-grid">
+<div class="stat-card"><div class="stat-value">1.5k+</div><div class="stat-label">YouTube</div></div><div class="stat-card"><div class="stat-value">4.6k+</div><div class="stat-label">TikTok</div></div><div class="stat-card"><div class="stat-value">8.9k+</div><div class="stat-label">Meta</div></div><div class="stat-card"><div class="stat-value">1M+</div><div class="stat-label">Monthly Views</div></div>
 </div>
-
-    <section id="builds" class="section container">
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">Featured builds</p>
-          <h2>The Current Fleet.</h2>
-        </div>
-        <p class="section-copy">
-          This is just the beginning of an ever-changing roster.
-        </p>
-      </div>
-
-      <div class="build-grid">
-        <div class="build-card">
-          <div class="build-image focus-image"></div>
-          <h3>2013 Focus ST</h3>
-          <p class="muted">Street build. Honest ownership. Real Opinions.</p>
-
-          <div class="point-list">
-            <div class="point-item"><span class="dot"></span><span>Full Mod List and Install Content</span></div>
-            <div class="point-item"><span class="dot"></span><span>Ownership Lessons and Common Issues</span></div>
-            <div class="point-item"><span class="dot"></span><span>Real-World Driving Impressions</span></div>
-          </div>
-
-          <a class="mini-btn" href="focus.html">View Build Page</a>
-        </div>
-
-     <div class="build-card">
-  <div class="build-image raptor-image"></div>
-  <h3>2014 SVT Raptor</h3>
-  <p class="muted">Real Build. Real Use. Real Results.</p>
-
-  <div class="point-list">
-    <div class="point-item"><span class="dot"></span><span>Buying Guides and Ownership Breakdowns</span></div>
-    <div class="point-item"><span class="dot"></span><span>Build Plans, Reviews, and Upgrades</span></div>
-    <div class="point-item"><span class="dot"></span><span>Daily Use, Quirks, and Long-Form Video Content</span></div>
+<div class="hero-image-wrap"><div class="hero-image-card"><img src="images/IMG_0017 (1).JPEG" alt="SlaterBilt Focus ST" class="hero-car-image"></div></div>
+</div></section>
+<section id="builds" class="section container"><div class="section-head"><div><p class="section-kicker">Featured builds</p><h2>The Current Fleet.</h2></div><p class="section-copy">This is just the beginning of an ever-changing roster.</p></div>
+<div class="build-grid">
+<div class="build-card"><div class="build-image focus-image"></div><h3>2013 Focus ST</h3><p class="muted">Street build. Honest ownership. Real Opinions.</p>
+<div class="point-list"><div class="point-item"><span class="dot"></span><span>Full Mod List and Install Content</span></div><div class="point-item"><span class="dot"></span><span>Ownership Lessons and Common Issues</span></div><div class="point-item"><span class="dot"></span><span>Real-World Driving Impressions</span></div></div><a class="mini-btn" href="focus.html">View Build Page</a></div>
+<div class="build-card"><div class="build-image raptor-image"></div><h3>2014 SVT Raptor</h3><p class="muted">Real Build. Real Use. Real Results.</p>
+<div class="point-list"><div class="point-item"><span class="dot"></span><span>Buying Guides and Ownership Breakdowns</span></div><div class="point-item"><span class="dot"></span><span>Build Plans, Reviews, and Upgrades</span></div><div class="point-item"><span class="dot"></span><span>Daily Use, Quirks, and Long-Form Video Content</span></div></div><button type="button" class="mini-btn" disabled>Build Page Coming Soon</button></div>
+</div></section>
+<section id="media" class="section container media-grid">
+<div class="panel"><p class="section-kicker">Media Kit</p><h2>Why Brands Work With SlaterBilt.</h2><p class="muted lead">The goal is simple: make product integrations feel native to the build, keep the content honest, and create assets that brands can actually use across multiple platforms.</p><div class="media-items"><div class="media-item">Build integrations with real install and usage footage</div><div class="media-item">Short-form clips for TikTok, Reels, and Shorts</div><div class="media-item">Professional photos for product and brand usage</div><div class="media-item">Long-form YouTube content with direct product callouts</div></div></div>
+<div class="panel panel-accent"><p class="section-kicker">Quick pitch</p><h3>Built for Sponsor Credibility.</h3><p class="muted">This site gives potential partners one clean place to see the builds, the content style, the audience, and how to get in touch.</p><div class="stack-list"><div>Authentic Install and Ownership Content</div><div>Cross-Platform Content Repurposing</div><div>Real Enthusiast Audience and Direct Niche Fit</div></div></div>
+</section>
+<section id="partners" class="section container" aria-labelledby="partners-title">
+<div class="panel sponsor-panel"><div class="sponsor-heading"><div><p class="section-kicker">Build Partners</p><h2 id="partners-title">The Brands Behind the Builds.</h2><p class="muted lead">Meet the partners helping bring SlaterBilt’s builds to life. Flip a card to explore their role and visit their dedicated page.</p></div><a class="sponsor-all" href="sponsors.html">All Sponsors →</a></div>
+<div class="sponsor-deck"><article class="sponsor-flip">
+  <div class="sponsor-inner">
+    <div class="sponsor-face sponsor-front">
+      <div class="sponsor-logo"><img src="images/AveryLogo.png" alt="Avery Dennison logo" loading="lazy"></div>
+      <h3>Avery Dennison</h3>
+      <button type="button" class="sponsor-toggle" aria-expanded="false" aria-controls="sponsor-back-0">Flip card <span aria-hidden="true">↻</span><span class="sr-only">: Avery Dennison</span></button>
+    </div>
+    <div class="sponsor-face sponsor-back" id="sponsor-back-0">
+      <p class="section-kicker">Build partner</p><h3>Avery Dennison</h3><p>The material partner behind the Focus ST’s wrap and visual identity.</p>
+      <a class="sponsor-link" href="sponsors/avery-dennison.html">View Sponsor Page <span aria-hidden="true">→</span><span class="sr-only">: Avery Dennison</span></a>
+      <button type="button" class="sponsor-return">Back to logo<span class="sr-only">: Avery Dennison</span></button>
+    </div>
   </div>
-
-  <button class="mini-btn">Build Page Coming Soon</button>
-</div>
-      </div>
-    </section>
-
-    <section id="media" class="section container media-grid">
-      <div class="panel">
-        <p class="section-kicker">Media Kit</p>
-        <h2>Why Brands Work With SlaterBilt.</h2>
-        <p class="muted lead">
-          The goal is simple: make product integrations feel native to the build,
-          keep the content honest, and create assets that brands can actually use
-          across multiple platforms.
-        </p>
-
-        <div class="media-items">
-          <div class="media-item">Build integrations with real install and usage footage</div>
-          <div class="media-item">Short-form clips for TikTok, Reels, and Shorts</div>
-          <div class="media-item">Professional photos for product and brand usage</div>
-          <div class="media-item">Long-form YouTube content with direct product callouts</div>
-        </div>
-      </div>
-
-      <div class="panel panel-accent">
-        <p class="section-kicker">Quick pitch</p>
-        <h3>Built for Sponsor Credibility.</h3>
-        <p class="muted">
-          This site gives potential partners one clean place to see the builds,
-          the content style, the audience, and how to get in touch.
-        </p>
-
-        <div class="stack-list">
-          <div>Authentic Install and Ownership Content</div>
-          <div>Cross-Platform Content Repurposing</div>
-          <div>Real Enthusiast Audience and Direct Niche Fit</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="partners" class="section container">
-      <div class="panel sponsor-panel">
-        <div>
-          <p class="section-kicker">Build Partners</p>
-          <h2>Want Your Brand on one of the Builds?</h2>
-          <p class="muted lead">
-            Sponsorships can include product installs, dedicated videos,
-            recurring build appearances, short-form content, and polished photo
-            assets for brand use.
-          </p>
-        </div>
-
-       <div class="logo-grid">
-
-  <div class="logo-box">
-    <img src="images/AveryLogo.png" alt="Avery Dennison">
+</article>
+<article class="sponsor-flip">
+  <div class="sponsor-inner">
+    <div class="sponsor-face sponsor-front">
+      <div class="sponsor-logo"><img src="images/BIG7.png" alt="Big 7 Kits logo" loading="lazy"></div>
+      <h3>Big 7 Kits</h3>
+      <button type="button" class="sponsor-toggle" aria-expanded="false" aria-controls="sponsor-back-1">Flip card <span aria-hidden="true">↻</span><span class="sr-only">: Big 7 Kits</span></button>
+    </div>
+    <div class="sponsor-face sponsor-back" id="sponsor-back-1">
+      <p class="section-kicker">Build partner</p><h3>Big 7 Kits</h3><p>Our longest-standing partner, supporting battery cable upgrades across multiple builds.</p>
+      <a class="sponsor-link" href="sponsors/big-7-kits.html">View Sponsor Page <span aria-hidden="true">→</span><span class="sr-only">: Big 7 Kits</span></a>
+      <button type="button" class="sponsor-return">Back to logo<span class="sr-only">: Big 7 Kits</span></button>
+    </div>
   </div>
-
-  <div class="logo-box">
-    <img src="images/BIG7.png" alt="Big 7 Kits">
+</article>
+<article class="sponsor-flip">
+  <div class="sponsor-inner">
+    <div class="sponsor-face sponsor-front">
+      <div class="sponsor-logo"><img src="images/VelossaTech.png" alt="VelossaTech logo" loading="lazy"></div>
+      <h3>VelossaTech</h3>
+      <button type="button" class="sponsor-toggle" aria-expanded="false" aria-controls="sponsor-back-2">Flip card <span aria-hidden="true">↻</span><span class="sr-only">: VelossaTech</span></button>
+    </div>
+    <div class="sponsor-face sponsor-back" id="sponsor-back-2">
+      <p class="section-kicker">Build partner</p><h3>VelossaTech</h3><p>Platform-specific intake hardware bringing style and performance to the Focus ST.</p>
+      <a class="sponsor-link" href="sponsors/velossatech.html">View Sponsor Page <span aria-hidden="true">→</span><span class="sr-only">: VelossaTech</span></a>
+      <button type="button" class="sponsor-return">Back to logo<span class="sr-only">: VelossaTech</span></button>
+    </div>
   </div>
-
- <div class="logo-box">
-  <img src="images/VelossaTech.png" alt="Velossa Tech">
-</div>
-
-  <div class="logo-box">
-    <img src="images/Vega Logo.jpg" alt="Vega Modified">
+</article>
+<article class="sponsor-flip">
+  <div class="sponsor-inner">
+    <div class="sponsor-face sponsor-front">
+      <div class="sponsor-logo"><img src="images/Vega Logo.jpg" alt="Vega Motorworks logo" loading="lazy"></div>
+      <h3>Vega Motorworks</h3>
+      <button type="button" class="sponsor-toggle" aria-expanded="false" aria-controls="sponsor-back-3">Flip card <span aria-hidden="true">↻</span><span class="sr-only">: Vega Motorworks</span></button>
+    </div>
+    <div class="sponsor-face sponsor-back" id="sponsor-back-3">
+      <p class="section-kicker">Build partner</p><h3>Vega Motorworks</h3><p>Aero and exterior upgrades supporting both our previous and current Focus ST builds.</p>
+      <a class="sponsor-link" href="sponsors/vega-motorworks.html">View Sponsor Page <span aria-hidden="true">→</span><span class="sr-only">: Vega Motorworks</span></a>
+      <button type="button" class="sponsor-return">Back to logo<span class="sr-only">: Vega Motorworks</span></button>
+    </div>
   </div>
-
-  <div class="logo-box">Your Logo</div>
-  <div class="logo-box">Your Logo</div>
-
-</div>
-    </section>
-
-    <section id="contact" class="section container contact-grid">
-      <div class="panel">
-        <p class="section-kicker">Contact</p>
-        <h2>Let’s Build Something.</h2>
-        <p class="muted lead">
-          For sponsorships, collaborations, and media inquiries, reach out directly.
-        </p>
-
-        <a class="btn btn-light" href="mailto:slaterbilt@gmail.com">
-          slaterbilt@gmail.com
-        </a>
-      </div>
-
-      <div class="panel dark-panel">
-        <div class="social-grid">
-          <a href="https://www.youtube.com/@slaterbilt" target="_blank" class="social-card">
-  <div class="social-label">Link</div>
-  <div class="social-name">YouTube</div>
-</a>
-          </a>
-          <a href="https://www.tiktok.com/@slaterbilt" target="_blank" class="social-card">
-            <div class="social-label">Link</div>
-            <div class="social-name">TikTok</div>
-          </a>
-          <a href="https://www.instagram.com/slaterbilt" target="_blank" class="social-card">
-            <div class="social-label">Link</div>
-            <div class="social-name">Instagram</div>
-          </a>
-          <a href="mailto:slaterbilt@gmail.com" class="social-card">
-            <div class="social-label">Link</div>
-            <div class="social-name">Contact</div>
-          </a>
-        </div>
-      </div>
-    </section>
+</article>
+<article class="sponsor-flip">
+  <div class="sponsor-inner">
+    <div class="sponsor-face sponsor-front">
+      <div class="sponsor-logo"><img src="images/GraveyardPerformance.png" alt="Graveyard Performance logo" loading="lazy"></div>
+      <h3>Graveyard Performance</h3>
+      <button type="button" class="sponsor-toggle" aria-expanded="false" aria-controls="sponsor-back-4">Flip card <span aria-hidden="true">↻</span><span class="sr-only">: Graveyard Performance</span></button>
+    </div>
+    <div class="sponsor-face sponsor-back" id="sponsor-back-4">
+      <p class="section-kicker">Build partner</p><h3>Graveyard Performance</h3><p>Performance parts and platform support for the street-driven Focus ST.</p>
+      <a class="sponsor-link" href="sponsors/graveyard-performance.html">View Sponsor Page <span aria-hidden="true">→</span><span class="sr-only">: Graveyard Performance</span></a>
+      <button type="button" class="sponsor-return">Back to logo<span class="sr-only">: Graveyard Performance</span></button>
+    </div>
   </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+</article>
+<article class="sponsor-flip">
+  <div class="sponsor-inner">
+    <div class="sponsor-face sponsor-front">
+      <div class="sponsor-logo"><img src="images/damondmotorsports.png" alt="Damond Motorsports logo" loading="lazy"></div>
+      <h3>Damond Motorsports</h3>
+      <button type="button" class="sponsor-toggle" aria-expanded="false" aria-controls="sponsor-back-5">Flip card <span aria-hidden="true">↻</span><span class="sr-only">: Damond Motorsports</span></button>
+    </div>
+    <div class="sponsor-face sponsor-back" id="sponsor-back-5">
+      <p class="section-kicker">Build partner</p><h3>Damond Motorsports</h3><p>Engine mounts and supporting hardware used throughout the Focus ST build.</p>
+      <a class="sponsor-link" href="sponsors/damond-motorsports.html">View Sponsor Page <span aria-hidden="true">→</span><span class="sr-only">: Damond Motorsports</span></a>
+      <button type="button" class="sponsor-return">Back to logo<span class="sr-only">: Damond Motorsports</span></button>
+    </div>
+  </div>
+</article>
+<article class="sponsor-flip">
+  <div class="sponsor-inner">
+    <div class="sponsor-face sponsor-front">
+      <div class="sponsor-logo"><img src="images/BNR.png" alt="BNR Supercars logo" loading="lazy"></div>
+      <h3>BNR Supercars</h3>
+      <button type="button" class="sponsor-toggle" aria-expanded="false" aria-controls="sponsor-back-6">Flip card <span aria-hidden="true">↻</span><span class="sr-only">: BNR Supercars</span></button>
+    </div>
+    <div class="sponsor-face sponsor-back" id="sponsor-back-6">
+      <p class="section-kicker">Build partner</p><h3>BNR Supercars</h3><p>Follow the Focus ST’s turbocharger plans, installation, tuning, and performance updates.</p>
+      <a class="sponsor-link" href="sponsors/bnr-supercars.html">View Sponsor Page <span aria-hidden="true">→</span><span class="sr-only">: BNR Supercars</span></a>
+      <button type="button" class="sponsor-return">Back to logo<span class="sr-only">: BNR Supercars</span></button>
+    </div>
+  </div>
+</article></div>
+<p class="muted">Want your brand on one of the builds? Sponsorships can include product installs, dedicated videos, recurring build appearances, short-form content, and polished photo assets for brand use.</p>
+<a class="btn btn-primary" href="#contact">Work With SlaterBilt</a>
+</div></section>
+<section id="contact" class="section container contact-grid">
+<div class="panel"><p class="section-kicker">Contact</p><h2>Let’s Build Something.</h2><p class="muted lead">For sponsorships, collaborations, and media inquiries, reach out directly.</p><a class="btn btn-light" href="mailto:slaterbilt@gmail.com">slaterbilt@gmail.com</a></div>
+<div class="panel dark-panel"><div class="social-grid">
+<a href="https://www.youtube.com/@slaterbilt" target="_blank" rel="noopener noreferrer" class="social-card"><div class="social-label">Link</div><div class="social-name">YouTube</div></a><a href="https://www.tiktok.com/@slaterbilt" target="_blank" rel="noopener noreferrer" class="social-card"><div class="social-label">Link</div><div class="social-name">TikTok</div></a><a href="https://www.instagram.com/slaterbilt" target="_blank" rel="noopener noreferrer" class="social-card"><div class="social-label">Link</div><div class="social-name">Instagram</div></a><a href="mailto:slaterbilt@gmail.com"  class="social-card"><div class="social-label">Link</div><div class="social-name">Contact</div></a>
+</div></div></section>
+</main></div>
+<script src="script.js"></script>
+<script>
+document.querySelectorAll('.sponsor-flip').forEach(card => {
+  const front = card.querySelector('.sponsor-front');
+  const back = card.querySelector('.sponsor-back');
+  const toggle = card.querySelector('.sponsor-toggle');
+  const close = card.querySelector('.sponsor-return');
+  const link = card.querySelector('.sponsor-link');
+  card.classList.add('enhanced');
+  back.inert = true;
+  back.setAttribute('aria-hidden', 'true');
+  function flip(open) {
+    card.classList.toggle('is-flipped', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    front.inert = open;
+    back.inert = !open;
+    front.setAttribute('aria-hidden', String(open));
+    back.setAttribute('aria-hidden', String(!open));
+    (open ? link : toggle).focus({preventScroll:true});
+  }
+  toggle.addEventListener('click', () => flip(true));
+  close.addEventListener('click', () => flip(false));
+  card.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && card.classList.contains('is-flipped')) {
+      event.preventDefault();
+      flip(false);
+    }
+  });
+  card.querySelectorAll('.sponsor-logo img').forEach(img => {
+    function fallback() { img.hidden = true; img.parentElement.textContent = img.alt.replace(/ logo$/, ''); }
+    img.addEventListener('error', fallback);
+    if (img.complete && !img.naturalWidth) fallback();
+  });
+});
+</script>
+</body></html>
